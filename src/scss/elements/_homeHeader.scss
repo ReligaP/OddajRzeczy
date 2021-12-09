@@ -42,6 +42,7 @@
     line-height: 85px;
     color:#737373;
     display: flex;
+    justify-content: center;
     align-items: center;
     font-family: $font-base;
     &:hover {
@@ -103,7 +104,7 @@
   height: 185px;
   width: 100%;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: flex-end;
   &_Box {
     display: flex;

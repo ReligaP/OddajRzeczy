@@ -2,5 +2,10 @@
 @import "src/scss/settings/fonts";
 @import "src/scss/settings/colors";
 @import "src/scss/elements/homeHeader";
+@import "src/scss/elements/homeThreeColumns";
+
+body {
+  font-family: $font-base;
+}
 
 
