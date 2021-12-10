@@ -1,0 +1,52 @@
+@import "src/scss/settings/fonts";
+@import "src/scss/settings/colors";
+
+.homeThreeColumnsBox {
+  width: 1900px ;
+  height: 384px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  &_Boxes {
+    width: 334px;
+    height: 252px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    &__number {
+      font-size: 90px;
+      height: 122px;
+      width: 102px;
+      line-height: 122px;
+      color: $number-color;
+      font-family: $font-base;
+      font-weight: lighter;
+      text-align: center;
+    }
+    &__title {
+      margin-top: 10px;
+      height: 24px;
+      color: $text-color;
+      font-size: 18px;
+      line-height: 30px;
+      letter-spacing: -0.36px;
+      text-align: center;
+      font-family: $font-base;
+      text-transform: uppercase;
+    }
+    &__content {
+      padding: 0;
+      width: 334px;
+      height: 68px;
+      margin-top: 28px;
+      color: $text-color;
+      font-size: 14px;
+      font-family: $font-alt;
+      font-weight: lighter;
+      text-align: center;
+      letter-spacing: -0.32px;
+      line-height: 22px;
+    }
+  }
+}
