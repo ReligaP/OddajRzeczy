@@ -78,7 +78,7 @@ const HomeHeader = () => {
                     </div>
                     <div className="downMenuDown">
                         <div className="downMenuDown_Box">
-                            <Link2 className="Link2" to="/logowanie">Logowanie</Link2>
+                            <Link2 className="Link2" to="/logowanie">oddaj rzeczy</Link2>
                         </div>
                         <div className="downMenuDown_Box">
                             <Link2 className="Link2" to="/logowanie">Zorganizuj<br/> zbiórke</Link2>
