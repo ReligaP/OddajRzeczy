@@ -5,22 +5,26 @@
   width: 1900px;
   height: 963px;
   display: flex;
+
   &_Image {
     width: 885px;
     background-position: -483px;
   }
+
   &_Content {
     width: 873px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
+
     &__UpMenu {
       width: 683px;
       height: 95px;
       margin-top: 37px;
       margin-left: 190px;
     }
+
     &__DownMenu {
       width: 674px;
       height: 350px;
@@ -30,26 +34,30 @@
     }
   }
 }
+
 .upMenuTop {
-  width:158px ;
-  height:36px ;
+  width: 158px;
+  height: 36px;
   margin-bottom: 17px;
-  margin-left: 525px;
+  margin-left: 510px;
   display: flex;
+
   &_Box1 {
     width: 68px;
     height: 36px;
     font-size: 14px;
     line-height: 85px;
-    color:$text2-color;
+    color: $text2-color;
     display: flex;
     justify-content: center;
     align-items: center;
     font-family: $font-base;
+
     &:hover {
       border: 0.75px solid $hover-color;
     }
   }
+
   &_Box2 {
     width: 90px;
     height: 36px;
@@ -59,26 +67,30 @@
     align-items: center;
     justify-content: center;
     font-family: $font-base,sans-serif;
+
     &:hover {
       border: 0.75px solid $hover-color;
     }
   }
 }
+
 .upMenuDown {
   width: 683px;
   height: 42px;
   display: flex;
   align-items: center;
+
   &_Box {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-grow: 1;
-    color:$text-color;
+    color: $text2-color;
     font-size: 18px;
     line-height: 24px;
     height: 42px;
     font-family: $font-base,sans-serif;
+
     &:hover {
       border: 0.75px solid $hover2-color;
     }
@@ -91,22 +103,25 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+
   &_content {
     width: 100%;
     height: 107px;
-    font-family:$font-base;
+    font-family: $font-base;
     font-size: 38px;
     text-align: center;
     letter-spacing: -0.76px;
     line-height: 55px;
   }
 }
+
 .downMenuDown {
   height: 185px;
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
+
   &_Box {
     display: flex;
     justify-content: center;
@@ -122,11 +137,12 @@
     text-transform: uppercase;
   }
 }
-.Link1 {
+
+.Link {
   cursor: pointer;
 }
 
-.Link2 {
+.ScrollLink {
   text-decoration: none;
-  color:$text2-color ;
+  color: $text2-color;
 }

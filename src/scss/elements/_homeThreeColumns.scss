@@ -7,6 +7,7 @@
   display: flex;
   align-items: center;
   justify-content: space-around;
+
   &_Boxes {
     width: 334px;
     height: 252px;
@@ -14,6 +15,7 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
+
     &__number {
       font-size: 90px;
       height: 122px;
@@ -24,6 +26,7 @@
       font-weight: lighter;
       text-align: center;
     }
+
     &__title {
       margin-top: 10px;
       height: 24px;
@@ -35,6 +38,7 @@
       font-family: $font-base;
       text-transform: uppercase;
     }
+
     &__content {
       padding: 0;
       width: 334px;
