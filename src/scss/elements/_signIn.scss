@@ -1,0 +1,176 @@
+@import "src/scss/settings/fonts";
+@import "src/scss/settings/colors";
+
+.signInBox {
+  width: 1858px;
+  height: 946px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-end;
+
+  &_navMenu {
+    width: 663px;
+    height: 86px;
+    margin-top: 37px;
+    margin-right: 139px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+
+    &__upMenu {
+      width: 158px;
+      height: 36px;
+      display: flex;
+    }
+
+    &__downMenu {
+      width: 663px;
+      height: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: $text-color;
+      font-size: 18px;
+      line-height: 24px;
+    }
+  }
+
+  &_title {
+    width: 253px;
+    height: 113px;
+    margin-right: 802.5px;
+    margin-top: 123px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    &__text {
+      width: 190px;
+      height: 55px;
+      font-size: 40px;
+      line-height: 55px;
+      letter-spacing: -0.8px;
+      color: $text-color;
+      font-family: $font-base;
+    }
+  }
+
+  &_login {
+    width: 504px;
+    height: 325px;
+    margin-right: 671px;
+    margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+    &__loginBox {
+      width: 384.5px;
+      height: 235px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-color: #F0F1F1;
+    }
+
+    &__loginButtons {
+      width: 504px;
+      height: 50px;
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+}
+
+.upMenuBox1 {
+  width: 68px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: $font-base;
+  font-size: 14px;
+  line-height: 85px;
+  color: $text2-color;
+
+  &:hover {
+    border: 1px solid $hover-color;
+  }
+
+}
+
+.upMenuBox2 {
+  width: 90px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: $font-base;
+  font-size: 14px;
+  line-height: 79px;
+
+  &:hover {
+    border: 1px solid $hover-color;
+  }
+}
+
+.loginButton {
+  width: 117px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family:$font-base;
+  font-weight: lighter;
+  font-size: 18px;
+  line-height: 32px;
+  color: #000000;
+
+  &:hover {
+    border: 1px solid $hover2-color;
+  }
+}
+
+.Link_downMenu {
+  cursor: pointer;
+  color: $text-color;
+  text-decoration: none;
+}
+
+.LinkButton {
+  cursor: pointer;
+  color: #000000;
+  text-decoration: none;
+}
+
+.loginBox_input{
+  width: 250px;
+  height: 62px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  &:nth-child(1) {
+    margin-bottom: 31px;
+  }
+
+  &__label {
+    font-size: 16px;
+    line-height: 22px;
+    font-weight: 600;
+    color:$text-color
+  }
+
+  &__field {
+    height: 25px;
+    font-size: 18px;
+    background-color: #F0F1F1;
+    border: none;
+    border-bottom: 1px solid $after-border-color;
+  }
+}
