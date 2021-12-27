@@ -1,0 +1,123 @@
+@import "src/scss/settings/fonts";
+@import "src/scss/settings/colors";
+
+.contactBox {
+  width: 528px;
+  height: 327px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+
+  &_upBox {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+
+    &__name {
+      width: 256px;
+      height: 62px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    &__email {
+      width: 256px;
+      height: 62px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+  }
+
+  &_downBox {
+    height: 135px;
+    width: 528px;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  &_button {
+    width: 150px;
+    height: 50px;
+    margin-top: 44px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    line-height: 32px;
+    font-family: $font-base;
+    font-weight: 300;
+    background-color: white;
+    border: 1px solid $after-border-color;
+    color: #000;
+  }
+}
+
+.successBox {
+  width: 528px;
+  height: auto;
+  margin-bottom: 30px;
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  &_content {
+    color: green;
+    font-size: 19px;
+    font-weight: bold;
+    line-height: 25px;
+  }
+}
+
+.upBox_label {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 18px;
+
+}
+
+.upBox_error {
+  color: red;
+  margin-top: 5px;
+  font-size: 14px;
+}
+
+.upBox_input {
+  height: 27px;
+  font-size: 22px;
+  color:#3C3C3C88;
+  border: none;
+  border-bottom: 1px solid $after-border-color;
+}
+
+.upBox_input__isInvalid {
+  border-bottom: 1px solid red;
+}
+
+.downBox_label {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 18px;
+  margin-bottom: 5px;
+}
+
+.downBox_textarea{
+  width: 528px;
+  height: 97px;
+  font-size: 18px;
+  line-height: 23px;
+  border: none;
+  border-bottom: 1px solid $after-border-color;
+  font-family: $font-base;
+  color:#3C3C3C78;
+}
+
+.downBox_textarea__isInvalid {
+  border-bottom: 1px solid red;
+}
