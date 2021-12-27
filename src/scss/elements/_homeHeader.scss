@@ -74,6 +74,45 @@
   }
 }
 
+.upMenuTopLogged {
+  width: 356px;
+  height: 36px;
+  margin-bottom: 17px;
+  margin-left: 327px;
+  display: flex;
+  align-items: center;
+
+  &_Email {
+    font-size: 14px;
+    line-height: 19px;
+    color: #000;
+    margin-right: 10px;
+  }
+
+  &_Box1 {
+    width: 90px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 13px;
+    color: #000;
+    border: 1px solid $hover-color;
+  }
+
+  &_Box2 {
+    width: 90px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    line-height: 15px;
+    color: #737373;
+    cursor: pointer;
+  }
+}
+
 .upMenuDown {
   width: 683px;
   height: 42px;
@@ -96,6 +135,7 @@
     }
   }
 }
+
 .downMenuTop {
   height: 165px;
   width: 100%;

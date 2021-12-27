@@ -1,9 +1,21 @@
 import { Link as ScrollLink } from "react-scroll";
 import { Link } from "react-router-dom";
+import app from "../firebase/firebaseconfig";
+import { getAuth, signOut} from "firebase/auth";
 import HomeHeroImage from "../assets/Home-Hero-Image.jpg";
 import Decoration from "../assets/Decoration.svg";
 
-const HomeHeader = () => {
+const HomeHeader = (props) => {
+    const ClickHandler = () => {
+        const auth=getAuth(app);
+        signOut(auth).then(() => {
+            console.log("Wylogowany");
+        }).catch((error) => {
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            console.log(errorCode, errorMessage);
+        })
+    }
     return (
         <div className="homeHeaderBox">
             <div className="homeHeaderBox_Image"
@@ -11,18 +23,46 @@ const HomeHeader = () => {
             </div>
             <div className="homeHeaderBox_Content">
                 <div className="homeHeaderBox_Content__UpMenu">
-                    <div className="upMenuTop">
-                        <div className="upMenuTop_Box1">
-                            <Link className="Link" to="/logowanie">
-                                Zaloguj
-                            </Link>
-                        </div>
-                        <div className="upMenuTop_Box2">
-                            <Link className="Link" to="/rejestracja">
-                                Załóż konto
-                            </Link>
-                        </div>
-                    </div>
+                    {
+                        props.email ?
+                            <div className="upMenuTopLogged">
+                                <p className="upMenuTopLogged_Email">
+                                    Cześć {props.email} !
+                                </p>
+                                <div className="upMenuTopLogged_Box1">
+                                    <Link
+                                        className="LinkButton"
+                                        to="/oddaj-rzeczy"
+                                    >
+                                        Oddaj rzeczy
+                                    </Link>
+                                </div>
+                                <div
+                                    className="upMenuTopLogged_Box2"
+                                >
+                                    <Link
+                                        onClick={ClickHandler}
+                                        className="LinkButton"
+                                        to="/wylogowano"
+                                    >
+                                        Wyloguj
+                                    </Link>
+                                </div>
+                            </div>
+                            :
+                            <div className="upMenuTop">
+                                <div className="upMenuTop_Box1">
+                                    <Link className="Link" to="/logowanie">
+                                        Zaloguj
+                                    </Link>
+                            </div>
+                                <div className="upMenuTop_Box2">
+                                    <Link className="Link" to="/rejestracja">
+                                        Załóż konto
+                                    </Link>
+                                </div>
+                            </div>
+                    }
                     <div className="upMenuDown">
                         <div className="upMenuDown_Box">
                             Start
