@@ -1,0 +1,76 @@
+@import "src/scss/settings/fonts";
+@import "src/scss/settings/colors";
+
+.signOutBox {
+  width: 1858px;
+  height: 649px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-end;
+
+  &_navMenu {
+    width: 663px;
+    height: 86px;
+    margin-top: 37px;
+    margin-right: 139px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+
+    &__upMenu {
+      width: 158px;
+      height: 36px;
+      display: flex;
+    }
+
+    &__downMenu {
+      width: 663px;
+      height: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: $text-color;
+      font-size: 18px;
+      line-height: 24px;
+    }
+  }
+
+  &_title {
+    width: 416px;
+    height: 168px;
+    margin-right: 723.5px;
+    margin-top: 123px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    &__text {
+      width: 414px;
+      height: 110px;
+      font-size: 40px;
+      line-height: 55px;
+      letter-spacing: -0.8px;
+      color: $text-color;
+      font-family: $font-base;
+      text-align: center;
+    }
+  }
+
+  &_button {
+    width: 150px;
+    height: 50px;
+    margin-top: 35px;
+    margin-right: 854px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    font-family: $font-base;
+    line-height: 32px;
+    font-weight: lighter;
+    border: 1px solid $after-border-color;
+  }
+}
