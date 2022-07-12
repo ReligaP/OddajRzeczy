@@ -1,0 +1,36 @@
+@import "src/scss/settings/fonts";
+@import "src/scss/settings/colors";
+
+.HeaderBox {
+  width: 1900px;
+  height: 179px;
+  background-color: #FAD648;
+
+  &_content1 {
+    width: 1076px;
+    height: 79px;
+    padding-top: 50px;
+    padding-left: 141px;
+  }
+
+  &_content2 {
+    width: 1226px;
+    height: 79px;
+    padding-top: 50px;
+    padding-left: 141px;
+  }
+}
+
+.HeaderBox_text {
+  font-size: 36px;
+  line-height: 32px;
+  font-weight: 600;
+  color: #000000;
+  margin-bottom: 5px;
+}
+
+.HeaderBox_text2 {
+  font-size: 22px;
+  line-height: 30px;
+  color: $text-color;
+}
