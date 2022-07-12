@@ -3,8 +3,24 @@
 @import "src/scss/settings/colors";
 @import "src/scss/elements/homeHeader";
 @import "src/scss/elements/homeThreeColumns";
-@import "src/scss/elements/_homeSimpleSteps.scss";
-@import "src/scss/elements/_homeAbout.scss";
+@import "src/scss/elements/homeSimpleSteps.scss";
+@import "src/scss/elements/homeAbout.scss";
+@import "src/scss/elements/homeWhoWeHelp.scss";
+@import "src/scss/elements/homeContact";
+@import "src/scss/elements/contactForm";
+@import "src/scss/elements/signIn";
+@import "src/scss/elements/register";
+@import "src/scss/elements/signOut";
+@import "elements/formHeader";
+@import "elements/formSelect";
+@import "elements/formStep1";
+@import "elements/formStep2";
+@import "elements/formStep3";
+@import "elements/formStep4";
+@import "elements/formSummary";
+@import "elements/formThanks";
+@import "elements/formStepHeaders";
+
 
 body {
   font-family: $font-base;

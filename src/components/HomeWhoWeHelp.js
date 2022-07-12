@@ -2,7 +2,6 @@ import { useState } from 'react';
 import Decoration from "../assets/Decoration.svg"
 import data from "../database/data";
 
-
 const HomeWhoWeHelp = () => {
         const [items,setItems] = useState(data.fund.items);
         const [title,setTitle] = useState(data.fund.description);
@@ -20,7 +19,6 @@ const HomeWhoWeHelp = () => {
         const handleClick = (e) => {
             setCurrentPage(Number(e.target.id));
         }
-
         const handleClickFund = () => {
             setItems(data.fund.items);
             setTitle(data.fund.description);
