@@ -1,0 +1,18 @@
+
+const FormStepHeader2 = () => {
+    return (
+        <div className="HeaderBox">
+            <div className="HeaderBox_content2">
+                <p className="HeaderBox_text">
+                    Ważne!
+                </p>
+                <p className="HeaderBox_text2">
+                    Wszystkie rzeczy do oddania zapakuj w 60l worki. Dokładną instrukcję
+                    jak poprawnie spakować rzeczy znajdziesz TUTAJ.
+                </p>
+            </div>
+        </div>
+    );
+};
+
+export default FormStepHeader2;
