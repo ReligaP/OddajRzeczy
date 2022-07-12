@@ -1,0 +1,134 @@
+@import "src/scss/settings/fonts";
+@import "src/scss/settings/colors";
+
+.formBox {
+  width: 1758px;
+  height: 853px;
+  display: flex;
+
+  &_image {
+    width: 1015px;
+    height: auto;
+  }
+
+  &_content {
+    width: 743px;
+    height: 100%;
+    position: relative;
+    z-index: 1;
+
+    &__navMenu {
+      width: 663px;
+      height: 86px;
+      margin-top: 37px;
+      margin-left: 80px;
+    }
+
+    &__box {
+      width: 663px;
+      height: 455px;
+      position: absolute;
+      z-index: 2;
+      top: 257px;
+      left: -57px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+    }
+  }
+}
+
+.box_title {
+  width: 602px;
+  height: 107px;
+  font-family: $font-base;
+  font-size: 37px;
+  line-height: 55px;
+  letter-spacing: -0.76px;
+  color: $text-color;
+  margin-bottom: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.box_steps {
+  width: 448px;
+  height: 55px;
+  font-size: 39.5px;
+  line-height: 55px;
+  font-family: $font-base;
+  font-weight: lighter;
+  color: $text-color;
+  margin-top: 19.2px;
+}
+
+.box_items {
+  width: 100%;
+  height: 190px;
+  margin-top: 25.8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+
+  &__box {
+    width: 135px;
+    height: 135px;
+    border: 1px solid $hover2-color;
+    transform: rotate(45deg);
+    margin-right: 17px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    &:before {
+      content: "1";
+      transform: rotate(-45deg);
+      display: block;
+      margin-right: 70px;
+      font-size: 32px;
+      font-weight: lighter;
+      color:$text-color;
+    }
+
+    &:after {
+      content: "Wybierz rzeczy";
+      transform: rotate(-45deg);
+      font-size: 22px;
+      line-height: 27px;
+      margin-left: 20px;
+      margin-bottom: 20px;
+      text-align:center;
+      font-weight: lighter;
+      color:$text-color;
+      letter-spacing: 0.5px;
+    }
+
+    &:nth-child(2):before {
+      content: "2";
+    }
+
+    &:nth-child(2):after {
+      content: "Spakój je w worki";
+    }
+
+    &:nth-child(3):before {
+      content: "3";
+    }
+
+    &:nth-child(3):after {
+      content: "Wybierz fundację";
+    }
+
+    &:nth-child(4):before {
+      content: "4";
+    }
+
+    &:nth-child(4):after {
+      content: "Zamów kuriera";
+    }
+  }
+}
