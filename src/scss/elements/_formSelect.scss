@@ -1,0 +1,56 @@
+@import "src/scss/settings/fonts";
+@import "src/scss/settings/colors";
+
+.formSelectBox {
+  width: 1900px;
+  height: 100%;
+
+  &_content {
+    width: 1900px;
+    height:883px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    &__buttons {
+      width: 474px;
+      height: 79px;
+      margin-left: 137px;
+    }
+  }
+}
+
+.previousButton {
+  width: 180px;
+  height: 79px;
+  background-color: transparent;
+  margin-right: 50px;
+  font-size: 24px;
+  color: #000000;
+  line-height: 32px;
+  font-weight: lighter;
+  border:1px solid $after-border-color
+}
+
+.nextButton {
+  width: 180px;
+  height: 79px;
+  background-color: transparent;
+  font-size: 24px;
+  color: #000000;
+  line-height: 32px;
+  font-weight: lighter;
+  border:1px solid $after-border-color
+}
+
+.confirmButton {
+  width: 244px;
+  height: 79px;
+  background-color: transparent;
+  font-size: 24px;
+  color: #000000;
+  line-height: 32px;
+  font-weight: lighter;
+  border:1px solid $after-border-color
+}
