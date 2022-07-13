@@ -1,0 +1,98 @@
+@import "src/scss/settings/fonts";
+@import "src/scss/settings/colors";
+
+.step1Box {
+  width: 590px;
+  height: 596px;
+  margin-left: 142px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-bottom: 158px;
+
+  &_content {
+    width: 590px;
+    height: 368px;
+    margin-top: 40px;
+
+    &__box {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      margin-bottom: 42px;
+      padding-top: 25px;
+    }
+  }
+}
+.step {
+  margin-top: 36px;
+
+  &_content {
+    font-size: 24px;
+    line-height: 27px;
+    color: $text-color;
+    font-weight: lighter;
+  }
+}
+
+.text {
+  margin-top: 70px;
+
+  &_content {
+    font-size: 36px;
+    line-height: 45px;
+    font-weight: 600;
+    color: #000000;
+  }
+}
+
+.container {
+  display: block;
+  position: relative;
+  padding-left: 60px;
+  margin-bottom: 42px;
+  cursor: pointer;
+  font-size: 24px;
+  width: 100%;
+  height: 20%;
+
+  &_text {
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: lighter;
+    position: relative;
+    top: -5px;
+    color: #000000;
+  }
+}
+
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.checkmark {
+  position: absolute;
+  top: -15px;
+  left: 0;
+  height: 40px;
+  width: 40px;
+  border-radius: 0;
+  border:1px solid $hover2-color;
+}
+
+.container input:checked ~ .checkmark {
+  background-color: #FAD648;
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
