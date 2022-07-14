@@ -1,0 +1,95 @@
+@import "src/scss/settings/fonts";
+@import "src/scss/settings/colors";
+
+.step4Box {
+  width: 996px;
+  height: 596px;
+  margin-left: 142px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-bottom: 158px;
+
+  &_content {
+    width: auto;
+    height: 311px;
+    margin-top: 50px;
+    display: flex;
+
+    &__box1 {
+      width: 392px;
+      height: 311px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      margin-right: 152px;
+    }
+
+    &__box2 {
+      width: 392px;
+      height: 293px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+}
+
+.step4Box_title {
+  font-size: 24px;
+  line-height: 45px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.step4Box_box {
+  width: 100%;
+  height: 40px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__text {
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: lighter;
+  }
+
+  &__input {
+    width: 256px;
+    border: 1px solid $hover2-color;
+    font-size: 24px;
+    background-color: transparent;
+  }
+}
+
+.ste4Box_largeBox {
+  width: 100%;
+  height: 59px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__text {
+    font-size: 24px;
+    line-height: 26px;
+    font-weight: lighter;
+  }
+}
+
+.step4Box_xlBox {
+  width: 100%;
+  height: 120px;
+  display: flex;
+
+  &__textarea {
+    width: 360px;
+    height: 110px;
+    border: 1px solid $hover2-color;
+    background-color: transparent;
+    font-size: 24px;
+  }
+}
