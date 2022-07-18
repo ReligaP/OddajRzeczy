@@ -21,7 +21,7 @@ const FormSummary = ({ data }) => {
                             className="contentUpBox_text__img"
                         />
                         <p className="contentUpBox_text__info">
-                            {data.bags} worki,{data.type}
+                            {data.bags} worki,{data.type}, {data.who}
                         </p>
                     </div>
                     <div className="contentUpBox_text">

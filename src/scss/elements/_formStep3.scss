@@ -1,0 +1,50 @@
+@import "src/scss/settings/fonts";
+@import "src/scss/settings/colors";
+
+.step3Box {
+  width: 575px;
+  height: 596px;
+  margin-left: 142px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-bottom: 158px;
+
+  &_content {
+    width: 634px;
+    height: auto;
+    margin-top: 20px;
+    margin-bottom: 121px;
+  }
+}
+
+.content3Box {
+  margin-top: 50px;
+
+  &_text {
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+
+  &_select {
+    width: 634px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &_input {
+    width: 570px;
+    height: 40px;
+    background-color: transparent;
+    font-size: 28px;
+    font-weight: normal;
+  }
+}
+
+
+
+
