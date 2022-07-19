@@ -29,7 +29,7 @@ const Home = () => {
         <>
             <HomeHeader email={email}/>
             <HomeThreeColumns />
-            <HomeSimpleSteps />
+            <HomeSimpleSteps email={email}/>
             <HomeAbout />
             <HomeWhoWeHelp />
             <HomeContact />
