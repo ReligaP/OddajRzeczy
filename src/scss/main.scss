@@ -20,7 +20,9 @@
 @import "elements/formSummary";
 @import "elements/formThanks";
 @import "elements/formStepHeaders";
-
+@import "elements/mobileHeader";
+@import "elements/mobileFooter";
+@import "elements/mobileHome";
 
 body {
   font-family: $font-base;
