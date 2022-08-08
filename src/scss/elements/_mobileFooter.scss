@@ -1,0 +1,62 @@
+@import "src/scss/settings/fonts";
+@import "src/scss/settings/colors";
+
+.mobileFooterBox {
+  width: 100%;
+  height: 300px;
+  background-color: $mobile-color;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+
+  &_logo {
+    width: 100px;
+    height: 100px;
+    background-color: #fff;
+    border-radius: 50%;
+    margin-left: 20px;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    &__content {
+      font-size: 20px;
+      font-weight: bold;
+      color: #000
+    }
+  }
+
+  &_contact {
+    width: 250px;
+    height: 45px;
+    margin-top: 15px;
+    margin-left: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &__text {
+      color: #333333;
+      font-weight: 700;
+    }
+  }
+
+  &_content {
+    width: auto;
+    height: auto;
+    margin-top: 15px;
+    margin-left: 20px;
+
+    &__text {
+      color: #333333;
+      margin-bottom: 5px;
+    }
+  }
+}
+
+.logoContent {
+  padding-right: 12.8px;
+}
