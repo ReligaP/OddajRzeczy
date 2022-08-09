@@ -1,12 +1,16 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { getAuth,signInWithEmailAndPassword } from "firebase/auth";
+import { BrowserView , MobileView } from "react-device-detect";
+import { getAuth , signInWithEmailAndPassword } from "firebase/auth";
 import { useNavigate } from "react-router";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import app from "../firebase/firebaseconfig";
 import Decoration from "../assets/Decoration.svg";
+import MobileHeader from "./MobileView/MobileHeader";
+import MobileFooter from "./MobileView/MobileFooter";
+import MobileSignIn from "./MobileView/MobileSignIn";
 
 const SignInSchema = yup.object().shape({
     email: yup.string()
@@ -41,90 +45,105 @@ const SignIn = () => {
             })
     };
     return (
-        <div className="signInBox">
-            <div className="signInBox_navMenu">
-                <div className="signInBox_navMenu__upMenu">
-                    <div className="upMenuBox1">
-                        Zaloguj
+        <>
+            <BrowserView>
+                <div className="signInBox">
+                    <div className="signInBox_navMenu">
+                        <div className="signInBox_navMenu__upMenu">
+                            <div className="upMenuBox1">
+                                Zaloguj
+                            </div>
+                            <div className="upMenuBox2">
+                                <Link
+                                    className="Link"
+                                    to="/rejestracja"
+                                >
+                                    Załóż konto
+                                </Link>
+                            </div>
+                        </div>
+                        <div className="signInBox_navMenu__downMenu">
+                            <Link
+                                className="Link_downMenu"
+                                to="/"
+                            >
+                                Start
+                            </Link>
+                            <p>
+                                O co chodzi?
+                            </p>
+                            <p>
+                                O nas
+                            </p>
+                            <p>
+                                Fundacja i organizacje
+                            </p>
+                            <p>
+                                Kontakt
+                            </p>
+                        </div>
                     </div>
-                    <div className="upMenuBox2">
-                        <Link
-                            className="Link"
-                            to="/rejestracja"
-                        >
-                            Załóż konto
-                        </Link>
+                    <div className="signInBox_title">
+                        <div className="signInBox_title__text">
+                            Zaloguj się
+                        </div>
+                        <div>
+                            <img src={Decoration} alt="Decoration-Sign"/>
+                        </div>
                     </div>
+                    <form className="signInBox_login" onSubmit={handleSubmit(submitHandler)}>
+                        <div className="signInBox_login__loginBox">
+                            <div className="loginBox_input">
+                                <label className="loginBox_input__label">
+                                    Email
+                                </label>
+                                <input
+                                    className={`loginBox_input__field ${errors.email ? `registerError_field` : ``} `}
+                                    type="email"
+                                    {...register("email")}
+                                />
+                                <p className="registerError">{errors.email?.message}</p>
+                            </div>
+                            <div className="loginBox_input">
+                                <label className="loginBox_input__label">
+                                    Hasło
+                                </label>
+                                <input
+                                    className={`loginBox_input__field ${errors.password ? `registerError_field` : ``} `}
+                                    type="password"
+                                    {...register("password")}
+                                />
+                                <p className="registerError">{errors.password?.message}</p>
+                                {
+                                    Boolean(error) && <p className="invalidEmail"> Nieprawidłowy login bądź hasło</p>
+                                }
+                            </div>
+                        </div>
+                        <div className="signInBox_login__loginButtons">
+                            <div className="loginButton">
+                                <Link className="LinkButton" to="/rejestracja">
+                                    Załóż konto
+                                </Link>
+                            </div>
+                            <button className="loginSubmit" type="submit">
+                                Zaloguj się
+                            </button>
+                        </div>
+                    </form>
                 </div>
-                <div className="signInBox_navMenu__downMenu">
-                    <Link
-                        className="Link_downMenu"
-                        to="/"
-                    >
-                        Start
-                    </Link>
-                    <p>
-                        O co chodzi?
-                    </p>
-                    <p>
-                        O nas
-                    </p>
-                    <p>
-                        Fundacja i organizacje
-                    </p>
-                    <p>
-                        Kontakt
-                    </p>
-                </div>
-            </div>
-            <div className="signInBox_title">
-                <div className="signInBox_title__text">
-                        Zaloguj się
-                </div>
-                <div>
-                    <img src={Decoration} alt="Decoration-Sign"/>
-                </div>
-            </div>
-            <form className="signInBox_login" onSubmit={handleSubmit(submitHandler)}>
-                <div className="signInBox_login__loginBox">
-                    <div className="loginBox_input">
-                        <label className="loginBox_input__label">
-                            Email
-                        </label>
-                        <input
-                            className={`loginBox_input__field ${errors.email ? `registerError_field` : ``} `}
-                            type="email"
-                            {...register("email")}
-                        />
-                        <p className="registerError">{errors.email?.message}</p>
-                    </div>
-                    <div className="loginBox_input">
-                        <label className="loginBox_input__label">
-                            Hasło
-                        </label>
-                        <input
-                            className={`loginBox_input__field ${errors.password ? `registerError_field` : ``} `}
-                            type="password"
-                            {...register("password")}
-                        />
-                        <p className="registerError">{errors.password?.message}</p>
-                        {
-                            Boolean(error) && <p className="invalidEmail"> Nieprawidłowy login bądź hasło</p>
-                        }
-                    </div>
-                </div>
-                <div className="signInBox_login__loginButtons">
-                    <div className="loginButton">
-                        <Link className="LinkButton" to="/rejestracja">
-                            Załóż konto
-                        </Link>
-                    </div>
-                    <button className="loginSubmit" type="submit">
-                        Zaloguj się
-                    </button>
-                </div>
-            </form>
-        </div>
+            </BrowserView>
+            <MobileView>
+                <MobileHeader />
+                <MobileSignIn
+                    onClick = {handleSubmit(submitHandler)}
+                    signSchema = {SignInSchema}
+                    errors = {errors}
+                    error = {error}
+                    register = {register}
+                />
+                <MobileFooter />
+            </MobileView>
+        </>
     );
 };
 
