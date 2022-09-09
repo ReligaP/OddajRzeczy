@@ -1,0 +1,70 @@
+@import "src/scss/settings/fonts";
+@import "src/scss/settings/colors";
+
+.mobileFormButtons {
+  height: 100px;
+  padding: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  @media (min-width: 600px) {
+    padding: 25px 100px;
+  }
+}
+
+.buttonsBox {
+  justify-content: space-between;
+}
+
+.buttonsBoxThank {
+  display: none;
+}
+
+.mobileFormButton {
+  width: 30%;
+  height: 80%;
+  font-size: 18px;
+  line-height: 20px;
+  font-weight: bold;
+  border: none;
+  border-radius: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @media (min-width: 600px) {
+    width: 20%;
+    height: 90%;
+    font-size: 20px;
+    line-height: 22px;
+  }
+}
+
+.mobileNextButton {
+  background-color: $mobile-third-color;
+  color: #fff;
+}
+
+.mobileBackButton {
+  background-color: #c9c9c9;
+  color: $mobile-third-color;
+}
+
+.mobileConfirmButton {
+  background-color: $mobile-third-color;
+  color: #fff;
+  width: 40%;
+  padding: 0 10px;
+  @media (min-width: 600px) {
+    width: 30%;
+  }
+}
+
+.mobileConfirmTypeButton {
+  width: 100px;
+  height: 40px;
+  margin-right: 15px;
+  @media (min-width: 600px) {
+    height: 45px;
+  }
+}
+
