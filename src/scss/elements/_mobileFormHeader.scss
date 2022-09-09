@@ -1,0 +1,24 @@
+@import "src/scss/settings/fonts";
+@import "src/scss/settings/colors";
+
+.mobileFormHeader {
+  height: 160px;
+  padding: 25px 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  background-color: $mobile-second-color;
+
+  &_text {
+    font-size: 20px;
+    line-height: 22px;
+    display: inline;
+    font-weight: bold;
+    color: $mobile-third-color;
+    @media (min-width: 600px) {
+      font-size: 22px;
+      line-height: 24px;
+    }
+  }
+}
