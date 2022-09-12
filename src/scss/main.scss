@@ -25,6 +25,10 @@
 @import "elements/mobileHome";
 @import "elements/mobileSignIn";
 @import "elements/mobileRegister";
+@import "elements/mobileFormHeader";
+@import "elements/mobileFormProgress";
+@import "elements/mobileFormButtons";
+
 
 body {
   font-family: $font-base;
