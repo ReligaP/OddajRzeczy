@@ -1,0 +1,47 @@
+@import "src/scss/settings/fonts";
+@import "src/scss/settings/colors";
+
+.mobileFormProgress {
+  height: 75px;
+  padding: 15px 25px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  @media (min-width: 600px) {
+    padding: 10px 100px;
+  }
+
+  &_box {
+    background-color: $mobile-second-color;
+    width: 40px;
+    height: 40px;
+    opacity: 95%;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.15);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &__number {
+      font-size: 20px;
+      line-height: 22px;
+      color: #fff;
+    }
+
+    &__icon {
+      color: #fff;
+    }
+  }
+}
+
+.mobileFormProgressDone {
+  display: none;
+}
+
+.checked {
+  background-color: $mobile-third-color;
+}
+
+.done {
+  background-color: #339966;
+}
+
