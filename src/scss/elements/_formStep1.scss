@@ -1,6 +1,8 @@
 @import "src/scss/settings/fonts";
 @import "src/scss/settings/colors";
 
+// BrowserView
+
 .step1Box {
   width: 590px;
   height: 596px;
@@ -25,6 +27,7 @@
     }
   }
 }
+
 .step {
   margin-top: 36px;
 
@@ -54,7 +57,6 @@
   margin-bottom: 42px;
   cursor: pointer;
   font-size: 24px;
-  width: 100%;
   height: 20%;
 
   &_text {
@@ -95,4 +97,292 @@
 
 .container input:checked ~ .checkmark:after {
   display: block;
+}
+
+// MobileView
+
+.stepMobileBox {
+  width: 100%;
+  height: auto;
+
+  &_header {
+    height: 50px;
+    padding: 10px 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @media (min-width: 600px) {
+      height: 60px;
+    }
+
+    &__content {
+      font-size: 20px;
+      line-height: 22px;
+      font-weight: bold;
+      @media (min-width: 600px) {
+        font-size: 22px;
+        line-height: 24px;
+      }
+    }
+  }
+
+  &_warning {
+    height: 120px;
+    background-color: $mobile-third-color;
+    padding: 10px 15px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    @media (min-width: 600px) {
+      height: 130px;
+      padding: 10px 25px;
+      justify-content: center;
+      align-items: center;
+    }
+
+    &__content {
+      margin: 10px 0 0 5px;
+      @media (min-width: 600px) {
+        margin-left: 10px;
+      }
+    }
+  }
+
+  &_step1Box {
+    height: auto;
+    padding: 20px 10px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    position: relative;
+    @media (min-width: 600px) {
+      padding: 30px 25px 0;
+    }
+  }
+}
+
+.stepWarningTitle {
+  font-size: 18px;
+  line-height: 20px;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+  color: #fff;
+  @media (min-width: 600px) {
+    font-size: 20px;
+    line-height: 22px;
+    margin-bottom: 10px;
+  }
+}
+
+.stepWarningText {
+  font-size: 16px;
+  line-height: 18px;
+  color: #fff;
+  @media (min-width: 600px) {
+    font-size: 18px;
+    line-height: 20px;
+  }
+}
+
+// Input Type
+
+.mobileContainer {
+  height:auto;
+  display: block;
+  position: relative;
+  margin-left: 20px;
+  margin-bottom: 15px;
+  cursor: pointer;
+
+  &_text {
+    font-size: 18px;
+    line-height: 22px;
+    font-weight: lighter;
+    position: relative;
+    top: 0;
+    color: #000000;
+    margin-left: 35px;
+    @media (min-width: 600px) {
+      font-size: 19px;
+    }
+  }
+}
+
+.mobileContainer input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.mobileCheckmark {
+  position: absolute;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  border: 1px solid $hover2-color;
+}
+
+.mobileContainer input:checked ~ .mobileCheckmark {
+  background-color: $mobile-color;
+}
+
+.mobileCheckmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.mobileContainer input:checked ~ .mobileCheckmark:after {
+  display: block;
+}
+
+// Input type details
+
+.mobileContainerDetails {
+  width: 95%;
+  height: auto;
+  background-color: $mobile-second-color;
+  position: absolute;
+  top: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  @media (min-width: 600px) {
+    padding: 0 60px;
+    width: 93%;
+  }
+
+  &_content {
+    width: 100%;
+    height: 150px;
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 20px;
+    padding-left: 20px;
+
+    &__clothesBox {
+      height: auto;
+      width: 48%;
+    }
+
+    &__booksBox {
+      height: auto;
+      width: 50%;
+    }
+
+    &__toysBox {
+      height: auto;
+      width: auto;
+      margin: 0 10px;
+
+      &:first-of-type {
+        width: 46%;
+      }
+    }
+
+    &__otherTypeBox {
+      height: 140px;
+      width: 90%;
+    }
+  }
+}
+
+.detailsBox_title {
+  font-size: 16px;
+  line-height: 18px;
+  font-weight: bold;
+}
+
+.checkbox input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.checkbox {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  margin: 10px 0;
+}
+
+.checkbox span {
+  height: 20px;
+  width: 20px;
+  flex-shrink: 0;
+  border: 1px solid $hover2-color;
+  cursor: pointer;
+  margin-right: 15px;
+
+}
+
+.checkbox input:checked + span {
+  background-color: #3699be;
+}
+
+.otherTypeBox_input {
+  margin-top: 10px;
+  width: 100%;
+  height: 80%;
+  outline: none;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+// Input type details age dropdown
+
+.dropDownContainer {
+  width: 90px;
+  margin: 10px auto;
+  position: relative;
+}
+
+.dropDownHeader {
+  padding: 1px;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.15);
+  border-radius: 8%;
+  font-size: 16px;
+  color: #000;
+  background: #d9d9d9 ;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &:hover {
+    background-color: lightgray;
+  }
+}
+
+.dropDownList {
+  margin: 0;
+  background: #e9e9ed;
+  border: 2px solid #e5e5e5;
+  box-sizing: border-box;
+  color: #000;
+  font-size: 16px;
+  font-weight: 500;
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+  &:first-child {
+    padding-top: 5px;
+  }
+}
+
+.listItem {
+  list-style: none;
+  padding: 2px;
+  cursor: pointer;
+  &:hover {
+    background-color: darkgrey;
+  }
+}
+
+.dropDownListContainer {
+  position: relative;
 }
