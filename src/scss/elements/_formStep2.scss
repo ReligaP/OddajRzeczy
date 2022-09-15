@@ -1,6 +1,8 @@
 @import "src/scss/settings/fonts";
 @import "src/scss/settings/colors";
 
+// BrowserView
+
 .step2Box {
   width: 1000px;
   height: 286px;
@@ -30,4 +32,98 @@
   }
 }
 
+// MobileView
 
+.headerStep2{
+  height: 60px;
+  padding-left: 35px;
+
+  &_content {
+    font-size: 18px;
+    line-height: 20px;
+    font-weight: bold;
+    @media (min-width: 600px) {
+      font-size: 20px;
+      line-height: 22px;
+    }
+  }
+}
+
+.warningTextStep2 {
+  margin-bottom: 10px;
+
+  &_content {
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+}
+
+.stepMobileBox_step2Box {
+  padding: 30px 20px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @media (min-width: 600px) {
+    padding: 40px 20px 30px 20px;
+  }
+
+  &__text {
+    font-size: 17px;
+    line-height: 19px;
+    font-weight: bold;
+    margin-right: 20px;
+    @media (min-width: 600px) {
+      font-size: 19px;
+      line-height: 21px;
+      margin-right: 50px;
+    }
+  }
+}
+
+// Input bags dropdown
+
+.dropDownContainerStep2 {
+  width: 130px;
+  margin: 0;
+  cursor: pointer;
+  position: relative;
+}
+
+.dropDownHeaderStep2 {
+  padding: 4px 4px 4px 6px;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.15);
+  border-radius: 10%;
+  font-size: 18px;
+  color: #000;
+  background: #d6d6d6 ;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  @media (min-width: 600px) {
+    font-size: 19px;
+  }
+}
+
+.dropDownListStep2 {
+  background: #e9e9ed;
+  color: #000;
+  font-size: 18px;
+  font-weight: 500;
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+  @media (min-width: 600px) {
+    font-size: 19px;
+  }
+  &:first-child {
+    padding-top: 5px;
+  }
+}
+
+.listItemStep2 {
+  padding: 4px 4px 4px 6px;
+}
+
+.focusStep2 {
+  background-color: lightgray;
+}
