@@ -1,6 +1,8 @@
 @import "src/scss/settings/fonts";
 @import "src/scss/settings/colors";
 
+// BrowserView
+
 .step4Box {
   width: 996px;
   height: 596px;
@@ -92,4 +94,118 @@
     background-color: transparent;
     font-size: 24px;
   }
+}
+
+// MobileView
+
+.warningStep4 {
+  padding-top: 15px;
+  @media (min-width: 600px) {
+    padding-top: 10px;
+  }
+}
+
+.stepMobileBox_step4Box {
+  height: auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  @media (min-width: 600px) {
+    padding-top: 30px;
+  }
+
+  &__deliveryBox {
+    width: 100%;
+    height: auto;
+    padding: 0 10px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    @media (min-width: 600px) {
+      width: 70%;
+    }
+
+    &:first-of-type {
+      margin-bottom: 20px;
+    }
+  }
+}
+
+.deliveryBox_title {
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+  @media (min-width: 600px) {
+    justify-content: center;
+  }
+
+  &__content {
+    font-size: 18px;
+    line-height: 20px;
+    font-weight: bold;
+    padding: 5px 0;
+    @media (min-width: 600px) {
+      font-size: 20px;
+      line-height: 22px;
+      padding: 10px 0;
+    }
+  }
+}
+
+.deliveryBox_input {
+  width: 100%;
+  margin: 5px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  @media (min-width: 600px) {
+    justify-content: space-around;
+  }
+
+  &__title {
+    margin-right: 20px;
+    font-size: 20px;
+    width: 130px;
+  }
+
+  &__content {
+    width: 200px;
+    margin-right: 10px;
+    font-size: 18px;
+    @media (max-width: 380px) {
+      width: 160px;
+      margin-right: 5px;
+    }
+  }
+}
+
+.deliveryBox_textarea {
+  width: 100%;
+  margin: 5px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  @media (min-width: 600px) {
+    justify-content: space-around;
+    flex-direction: row;
+  }
+
+  &__title {
+    margin-bottom: 5px;
+  }
+
+  &__content {
+    height: 70px;
+    align-self: flex-end;
+  }
+}
+
+.focusStep4Box {
+  border: 1px solid $mobile-color;
+  box-shadow: 0 0 2px 1px rgba(40, 148, 191, 1)
 }
