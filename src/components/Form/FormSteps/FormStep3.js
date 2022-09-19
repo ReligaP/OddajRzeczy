@@ -1,122 +1,314 @@
 import { useState } from 'react';
+import { BrowserView , MobileView } from "react-device-detect";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 import MenuItem from "@mui/material/MenuItem";
+import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
+import mobileFormCityOptions from "../../../database/mobileFormCityOptions";
+import mobileFormFund from "../../../database/mobileFormFund";
+import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
+import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
 
 const FormStep3 = ({ update }) => {
-    const [city,setCity]= useState("Poznań");
-    const [who,setWho] = useState("dzieciom")
+    const [city,setCity]= useState("Warszawa");
+    const [who,setWho] = useState("dzieciom");
+    const [fund,setFund] = useState("");
+    const [active,setActive] = useState(false);
+    const [isOpen, setIsOpen] = useState(false);
+    const [currentCase, setCurrentCase] = useState(NaN);
 
-    const handleChange = (event) => {
-        setCity(event.target.value);
+    const togglingCity = () => setIsOpen(!isOpen);
+    const handleClickCity = (e) => {
+        setCity(e.target.value);
     };
-
+    const handleClickActive = () => {
+        setActive(true);
+    };
+    const currentSelector = (e) => {
+        setCurrentCase(Number(e.target.value))
+    };
+    const onOptionClicked = value => () => {
+        setCity(value);
+        update("localization",value)
+        setIsOpen(false);
+        setCurrentCase(NaN);
+    };
+    const handleClickOther = (e) => {
+        setFund(e.target.value)
+    };
     return (
-        <div className="step3Box">
-            <div className="step">
-                <p className="step_content">
-                    Krok 3/4
-                </p>
-            </div>
-            <div className="text">
-                <p className="text_content">
-                    Lokalizacja:
-                </p>
-            </div>
-            <div className="step3Box_content">
-                <div>
-                    <FormControl
-                        size="medium"
-                    >
-                        <Select
-                            labelId="demo-simple-select-label"
-                            id="demo-simple-select"
-                            value={city}
-                            size="large"
-                            variant="standard"
-                            sx = {{width:"150px"}}
-                            onChange={handleChange}
-                            onBlur={() => update("localization", city)}
-                        >
-                            <MenuItem value={"Poznań"}>Poznań</MenuItem>
-                            <MenuItem value={"Warszawa"}>Warszawa</MenuItem>
-                            <MenuItem value={"Kraków"}>Kraków</MenuItem>
-                            <MenuItem value={"Wrocław"}>Wrocław</MenuItem>
-                            <MenuItem value={"Katowice"}>Katowice</MenuItem>
-                        </Select>
-                    </FormControl>
-                </div>
-                <div className="content3Box" >
-                    <p className="content3Box_text">
-                        Komu chcesz pomóc?
-                    </p>
-                    <div className="content3Box_select">
-                        <label className="container">
+        <>
+            <BrowserView>
+                <div className="step3Box">
+                    <div className="step">
+                        <p className="step_content">
+                            Krok 3/4
+                        </p>
+                    </div>
+                    <div className="text">
+                        <p className="text_content">
+                            Lokalizacja:
+                        </p>
+                    </div>
+                    <div className="step3Box_content">
+                        <div>
+                            <FormControl
+                                size="medium"
+                            >
+                                <Select
+                                    labelId="demo-simple-select-label"
+                                    id="demo-simple-select"
+                                    value={city}
+                                    size="large"
+                                    variant="standard"
+                                    sx = {{width:"150px"}}
+                                    onChange={handleClickCity}
+                                    onBlur={() => update("localization", city)}
+                                >
+                                    <MenuItem value={"Warszawa"}>Warszawa</MenuItem>
+                                    <MenuItem value={"Poznań"}>Poznań</MenuItem>
+                                    <MenuItem value={"Kraków"}>Kraków</MenuItem>
+                                    <MenuItem value={"Wrocław"}>Wrocław</MenuItem>
+                                    <MenuItem value={"Katowice"}>Katowice</MenuItem>
+                                    <MenuItem value={"Gdańsk"}>Gdańsk</MenuItem>
+                                    <MenuItem value={"Lublin"}>Lublin</MenuItem>
+                                </Select>
+                            </FormControl>
+                        </div>
+                        <div className="content3Box" >
+                            <p className="content3Box_text">
+                                Komu chcesz pomóc?
+                            </p>
+                            <div className="content3Box_select">
+                                <label className="container">
                         <span className="container_text">
                             dzieciom
                         </span>
-                            <input
-                                type="radio"
-                                name="radio"
-                                value={"dzieciom"}
-                                onClick={() => setWho("dzieciom")}
-                                onBlur={() => update("who",who)}
-                            />
-                            <span className="checkmark" />
-                        </label>
-                        <label className="container">
+                                    <input
+                                        type="radio"
+                                        name="radio"
+                                        value={"dzieciom"}
+                                        onClick={() => setWho("dzieciom")}
+                                        onBlur={() => update("who",who)}
+                                    />
+                                    <span className="checkmark" />
+                                </label>
+                                <label className="container">
                         <span className="container_text">
                             samotnym matkom
                         </span>
-                            <input
-                                type="radio"
-                                name="radio"
-                                value={"samotnym matkom"}
-                                onClick={() => setWho("samotnym matkom")}
-                                onBlur={() => update("who",who)}
-                            />
-                            <span className="checkmark" />
-                        </label>
-                        <label className="container">
+                                    <input
+                                        type="radio"
+                                        name="radio"
+                                        value={"samotnym matkom"}
+                                        onClick={() => setWho("samotnym matkom")}
+                                        onBlur={() => update("who",who)}
+                                    />
+                                    <span className="checkmark" />
+                                </label>
+                                <label className="container">
                         <span className="container_text">
                             bezdomnym
                         </span>
-                            <input
-                                type="radio"
-                                name="radio"
-                                value={"bezdomnym"}
-                                onClick={() => setWho("bezdomnym")}
-                                onBlur={() => update("who",who)}
-                            />
-                            <span className="checkmark" />
-                        </label>
-                        <label className="container">
+                                    <input
+                                        type="radio"
+                                        name="radio"
+                                        value={"bezdomnym"}
+                                        onClick={() => setWho("bezdomnym")}
+                                        onBlur={() => update("who",who)}
+                                    />
+                                    <span className="checkmark" />
+                                </label>
+                                <label className="container">
                         <span className="container_text">
                             niepełnosprawnym
                         </span>
+                                    <input
+                                        type="radio"
+                                        name="radio"
+                                        value={"niepełnosprawnym"}
+                                        onClick={() => setWho("niepełnosprawnym")}
+                                        onBlur={() => update("who",who)}
+                                    />
+                                    <span className="checkmark" />
+                                </label>
+                            </div>
+                        </div>
+                        <div>
+                            <p className="content3Box_text">
+                                Wpisz nazwę innej lokalizacji (opcjonalnie)
+                            </p>
                             <input
-                                type="radio"
-                                name="radio"
-                                value={"niepełnosprawnym"}
-                                onClick={() => setWho("niepełnosprawnym")}
-                                onBlur={() => update("who",who)}
+                                className="content3Box_input"
+                                onChange={handleClickCity}
+                                onBlur={() => update("localization",city)}
                             />
-                            <span className="checkmark" />
-                        </label>
+                        </div>
                     </div>
                 </div>
-                <div>
-                    <p className="content3Box_text">
-                        Wpisz nazwę innej lokalizacji (opcjonalnie)
-                    </p>
-                    <input
-                        className="content3Box_input"
-                        onChange={handleChange}
-                        onBlur={() => update("localization",city)}
-                    />
+            </BrowserView>
+            <MobileView>
+                <div className="stepMobileBox">
+                    <div className="stepMobileBox_header headerStep2">
+                        <p className="stepMobileBox_header__content headerStep2_content">
+                            Znajdź organizację, której chcesz pomóc
+                        </p>
+                    </div>
+                    <div className="stepMobileBox_warning">
+                        <InfoOutlinedIcon sx={{fontSize:"50px",color:"#fff"}} />
+                        <div className="stepMobileBox_warning__content">
+                            <p className="stepWarningText warningTextStep2">
+                                Jeśli wiesz komu chcesz pomóc, możesz wpisać nazwę organizacji.
+                            </p>
+                            <p className="stepWarningText warningTextStep2">
+                                Możesz też filtrować organizacje po ich lokalizacji bądź celu ich pomocy.
+                            </p>
+                        </div>
+                    </div>
+                    <div className="stepMobileBox_step3Box">
+                        <div className="stepMobileBox_step3Box__city">
+                            <p className="step3Box_text">
+                                Lokalizacja
+                            </p>
+                            <div className="dropDownContainerStep2 dropDownStep3">
+                                <div
+                                    className="dropDownHeaderStep2"
+                                    onClick={togglingCity}
+                                >
+                                    {city}
+                                    {isOpen ? <ArrowUpwardIcon fontSize="xsmall"/> : <ArrowDownwardIcon fontSize="xsmall"/>}
+                                </div>
+                                {
+                                    isOpen
+                                    &&
+                                    (
+                                        <div className="dropDownListContainer">
+                                            <ul className="dropDownListStep2">
+                                                {
+                                                    mobileFormCityOptions.map((option,index) => (
+                                                        <li
+                                                            className={
+                                                                `listItemStep2 
+                                                                ${currentCase === index ? 'focusStep2' : '' }`
+                                                            }
+                                                            onClick={onOptionClicked(option)}
+                                                            key={index}
+                                                            value={index}
+                                                            onTouchStart={currentSelector}
+                                                        >
+                                                            {option}
+                                                        </li>
+                                                    ))
+                                                }
+                                            </ul>
+                                        </div>
+                                    )
+                                }
+                            </div>
+                        </div>
+                        <div className="stepMobileBox_step3Box__who">
+                            <p className="step3Box_text">
+                                Komu chcesz pomóc
+                            </p>
+                            <div className="step3Box_container">
+                                <button
+                                    className={`step3Box_container__box ${who === "dzieciom" ? 'activeItem' :''}`}
+                                    value={"dzieciom"}
+                                    onClick={() => setWho("dzieciom")}
+                                    onBlur={() => update("who",who)}
+                                >
+                                    dzieciom
+                                </button>
+                                <button
+                                    className={`step3Box_container__box ${who === "samotnym matkom" ? 'activeItem' :''}`}
+                                    value={"samotnym matkom"}
+                                    onClick={() => setWho("samotnym matkom")}
+                                    onBlur={() => update("who",who)}
+                                >
+                                    samotnym matkom
+                                </button>
+                                <button
+                                    className={`step3Box_container__box ${who === "bezdomnym" ? 'activeItem' :''}`}
+                                    value={"bezdomnym"}
+                                    onClick={() => setWho("bezdomnym")}
+                                    onBlur={() => update("who",who)}
+                                >
+                                    bezdomnym
+                                </button>
+                                <button
+                                    className={`step3Box_container__box ${who === "niepełnosprawnym" ? 'activeItem' :''}`}
+                                    value={"niepełnosprawnym"}
+                                    onClick={() => setWho("niepełnosprawnym")}
+                                    onBlur={() => update("who",who)}
+                                >
+                                    niepełnosprawnym
+                                </button>
+                            </div>
+                        </div>
+                        <div className="stepMobileBox_step3Box__search">
+                            <button
+                                className="step3Box_button"
+                                onClick={handleClickActive}
+                            >
+                                szukaj
+                            </button>
+                            {
+                                active
+                                &&
+                                <div
+                                    className="step3BoxSearchContainer"
+                                >
+                                    {
+                                        mobileFormFund.filter(el =>
+                                            (el.city === city && (el.type.includes(`${who}`)))).map((item) => {
+                                            return(
+                                                <li
+                                                    key={item.id}
+                                                    className="step3BoxSearchContainer_item"
+                                                >
+                                                    <button
+                                                        onClick={() => setFund(item.title)}
+                                                        onBlur={() => update("fund",fund)}
+                                                        className={
+                                                                    `buttonSearch 
+                                                                     ${fund === `${item.title}`?'activeFund':''}
+                                                                     `
+                                                                    }
+                                                    >
+                                                        <p className="buttonSearch_title">
+                                                            {item.title}
+                                                        </p>
+                                                        <p className="buttonSearch_type">
+                                                            Pomoc {item.type.toString()}
+                                                        </p>
+                                                        <p className="buttonSearch_city">
+                                                            {item.city}
+                                                        </p>
+                                                        <p className="buttonSearch_content">
+                                                            {item.description}
+                                                        </p>
+                                                    </button>
+                                                </li>
+                                            )
+                                        })
+                                    }
+                                </div>
+                            }
+                        </div>
+                        <div className="stepMobileBox_step3Box__fundOther">
+                            <p className="step3Box_text">
+                                Wpisz nazwę konkretnej organizacji (opcjonalnie)
+                            </p>
+                            <input
+                                className="content3Box_input fundOtherInput"
+                                onChange={handleClickOther}
+                                onBlur={() => update("fund",fund)}
+                            />
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
+            </MobileView>
+        </>
     );
 };
 
