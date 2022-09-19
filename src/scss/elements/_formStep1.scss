@@ -186,6 +186,10 @@
   }
 }
 
+.headerStep1 {
+  margin-bottom: 10px;
+}
+
 // Input Type
 
 .mobileContainer {
@@ -340,6 +344,9 @@
   width: 90px;
   margin: 10px auto;
   position: relative;
+  @media (min-width: 600px) {
+    width: 110px;
+  }
 }
 
 .dropDownHeader {
@@ -352,10 +359,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-
-  &:hover {
-    background-color: lightgray;
-  }
 }
 
 .dropDownList {
@@ -378,9 +381,6 @@
   list-style: none;
   padding: 2px;
   cursor: pointer;
-  &:hover {
-    background-color: darkgrey;
-  }
 }
 
 .dropDownListContainer {

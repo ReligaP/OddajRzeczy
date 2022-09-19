@@ -15,6 +15,7 @@ const FormStep1 = ({ update }) => {
     const [selectedOptionBoy, setSelectedOptionBoy] = useState("0-2");
     const [selectedOptionGirl, setSelectedOptionGirl] = useState("0-2");
     const [otherTypeText, setOtherTypeText] = useState("");
+    const [currentCase, setCurrentCase] = useState(NaN);
 
     const togglingBoyAge = () => setIsOpenBoy(!isOpenBoy);
     const togglingGirlAge = () => setIsOpenGirl((!isOpenGirl));
@@ -58,6 +59,9 @@ const FormStep1 = ({ update }) => {
     };
     const handleChangeOther = (e) => {
         setOtherTypeText(e.target.value);
+    };
+    const currentSelector = (e) => {
+        setCurrentCase(Number(e.target.value))
     };
     return (
         <>
@@ -142,7 +146,7 @@ const FormStep1 = ({ update }) => {
             </BrowserView>
             <MobileView>
                 <div className="stepMobileBox">
-                    <div className="stepMobileBox_header">
+                    <div className="stepMobileBox_header headerStep1">
                         <p className="stepMobileBox_header__content">
                             Zaznacz co chcesz oddać
                         </p>
@@ -354,9 +358,15 @@ const FormStep1 = ({ update }) => {
                                                             {
                                                                 mobileFormAgeOptions.map((option,index) => (
                                                                     <li
-                                                                        className="listItem"
+                                                                        className={`listItem
+                                                                                    ${currentCase 
+                                                                                    === 
+                                                                                    index ? 'focusStep2' : '' }`
+                                                                                }
                                                                         onClick={onOptionClickedBoy(option)}
                                                                         key={index}
+                                                                        value={index}
+                                                                        onTouchStart={currentSelector}
                                                                     >
                                                                         {option}
                                                                     </li>
@@ -385,9 +395,15 @@ const FormStep1 = ({ update }) => {
                                                             {
                                                                 mobileFormAgeOptions.map((option,index) => (
                                                                     <li
-                                                                        className="listItem"
+                                                                        className={`listItem
+                                                                                    ${currentCase
+                                                                                    ===
+                                                                                    index ? 'focusStep2' : '' }`
+                                                                                }
                                                                         onClick={onOptionClickedGirl(option)}
                                                                         key={index}
+                                                                        value={index}
+                                                                        onTouchStart={currentSelector}
                                                                     >
                                                                         {option}
                                                                     </li>
