@@ -1,6 +1,8 @@
 @import "src/scss/settings/fonts";
 @import "src/scss/settings/colors";
 
+// BrowserView
+
 .summaryBox {
   width: 800px;
   height: 695px;
@@ -172,4 +174,81 @@
 
 .contentDownBox_marginText {
   margin-right: 50px;
+}
+
+// MobileView
+
+.stepMobileBox_summaryBox {
+  height: auto;
+  padding: 15px 0;
+  background-color: $mobile-second-color;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  @media (min-width: 600px) {
+    padding-top: 25px;
+  }
+
+  &__dataBox {
+    width: 85%;
+    height: auto;
+    margin-bottom: 15px;
+    @media (min-width: 600px) {
+      width: 63%;
+      padding: 0 15px;
+      margin-bottom: 20px;
+    }
+  }
+}
+
+.summaryDataBoxTitle {
+  font-size: 17px;
+  line-height: 19px;
+  @media (min-width: 600px) {
+    font-size: 19px;
+    line-height: 21px;
+  }
+}
+
+.dataBox_content {
+  height: auto;
+  padding: 5px 0;
+  display: flex;
+  margin-bottom: 5px;
+  justify-content: flex-start;
+  align-items: center;
+
+  &:first-of-type {
+    padding-top: 10px;
+  }
+
+  &__text {
+    font-size: 15px;
+    line-height: 17px;
+    margin-left: 10px;
+    @media (min-width: 600px) {
+      font-size: 18px;
+      line-height: 20px;
+    }
+
+    &:first-of-type {
+      margin-left: 0;
+      font-weight: normal;
+    }
+  }
+}
+
+.deliveryTextNote {
+  font-size: 16px;
+}
+
+.dataBoxContentText2 {
+  font-size: 16px;
+  line-height: 18px;
+  font-weight: 600;
+  @media (min-width: 600px) {
+    font-size: 18px;
+    line-height: 20px;
+  }
 }
