@@ -15,6 +15,9 @@ const FormSummary = ({ data }) => {
         if (Number(data.bags) > 4 ) {
             return `${data.bags} worków ,`
         }
+        if ((data.bags.length) === 2 ) {
+            return `Więcej niż 5 worków ,`
+        }
     };
     const printType = () => {
         switch (data.type) {
