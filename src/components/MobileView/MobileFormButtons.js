@@ -1,7 +1,8 @@
+import { Link } from "react-router-dom";
 
 const MobileFormButtons = (props) => {
     return (
-        <div className={`mobileFormButtons ${props.page > 1 && 'buttonsBox'} ${props.page === 6 && `buttonsThank`}`}>
+        <div className={`mobileFormButtons ${props.page > 1 && 'buttonsBox'} ${props.page === 6 && 'buttonsBoxThanks'}`}>
             {
                 (props.page !== 1 && props.page <= 5)
                 &&
@@ -31,6 +32,23 @@ const MobileFormButtons = (props) => {
                 >
                     potwierdzam
                 </button>
+            }
+            {
+                props.page === 6
+                &&
+                <Link to="/" className="mobileFormButtonLink mobileFormButton mobileThanksButton">
+                        Strona główna
+                </Link>
+            }
+            {
+                props.page === 6
+                &&
+                <Link
+                    className="mobileFormButtonLink mobileFormButton mobileThanksButton"
+                    to="/darowizny"
+                >
+                    Twoje darowizny
+                </Link>
             }
         </div>
     );
