@@ -4,32 +4,42 @@
 .mobileHeaderBox {
   width: 100%;
   height: 120px;
+  padding: 0 15px;
+  margin-bottom: 25px;
   background-color: $mobile-color;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 20px;
   position: relative;
+  @media (min-width: 600px) {
+    height: 150px;
+    padding: 0 35px;
+  }
+  @media (min-width: 800px) {
+    padding: 0 50px;
+  }
 
   &_logo {
     width: 100px;
     height: 100px;
-    margin-left: 25px;
-    border-radius: 50%;
     background-color: #fff;
+    border-radius: 50%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
-    &__content {
-      font-size: 20px;
-      font-weight: bold;
+    @media (min-width: 600px) {
+      width: 120px;
+      height: 120px;
     }
 
-    &__link {
-      text-decoration: none;
+    &__text {
+      font-size: 20px;
+      font-weight: bold;
       color: #000;
+      @media (min-width: 600px) {
+        font-size: 21px;
+      }
     }
   }
 
@@ -39,6 +49,12 @@
     position: relative;
   }
 }
+
+.mobileLogoUpperText {
+  padding-right: 12.8px;
+}
+
+// Ham-Menu
 
 *,
 *::after,
