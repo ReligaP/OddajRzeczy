@@ -153,101 +153,95 @@ const FormSummary = ({ data }) => {
                         </header>
                         <section>
                             <div className="stepMobileBox_summaryBox">
-                                <section>
-                                    <div className="stepMobileBox_summaryBox__dataBox">
-                                        <div className="deliveryBox_title">
-                                            <p className="deliveryBox_title__content summaryDataBoxTitle">
-                                                Oddajesz
-                                            </p>
-                                        </div>
-                                        <div className="dataBox_content">
-                                            <ShoppingBagOutlinedIcon sx={{width:"50px",height:"50px",marginRight:"10px"}} />
-                                            <p className="dataBox_content__text">
-                                                {printBags()}{printType()}
-                                            </p>
-                                        </div>
-                                        <div className="dataBox_content">
-                                            <VolunteerActivismIcon sx={{width:"50px",height:"50px",marginRight:"10px"}} />
-                                            <p className="dataBox_content__text">
-                                                {data.fund}&nbsp;{(!data.fund || !data.localization) ? '' : ', '}{data.localization}
-                                            </p>
-                                        </div>
+                                <div className="stepMobileBox_summaryBox__dataBox">
+                                    <div className="deliveryBox_title">
+                                        <p className="deliveryBox_title__content summaryDataBoxTitle">
+                                            Oddajesz
+                                        </p>
                                     </div>
-                                </section>
-                                <section>
-                                    <div className="stepMobileBox_summaryBox__dataBox">
-                                        <div className="deliveryBox_title">
-                                            <p className="deliveryBox_title__content summaryDataBoxTitle">
-                                                Adres odbioru
-                                            </p>
-                                        </div>
-                                        <div className="dataBox_content">
-                                            <p className="dataBox_content__text ">
-                                                Ulica:
-                                            </p>
-                                            <p className="dataBox_content__text dataBoxContentText2">
-                                                {data.street}
-                                            </p>
-                                        </div>
-                                        <div className="dataBox_content">
-                                            <p className="dataBox_content__text">
-                                                Miasto:
-                                            </p>
-                                            <p className="dataBox_content__text dataBoxContentText2">
+                                    <div className="dataBox_content">
+                                        <ShoppingBagOutlinedIcon sx={{width:"50px",height:"50px",marginRight:"10px"}} />
+                                        <p className="dataBox_content__text">
+                                            {printBags()}{printType()}
+                                        </p>
+                                    </div>
+                                    <div className="dataBox_content">
+                                        <VolunteerActivismIcon sx={{width:"50px",height:"50px",marginRight:"10px"}} />
+                                        <p className="dataBox_content__text">
+                                            {data.fund}&nbsp;{(!data.fund || !data.localization) ? '' : ', '}{data.localization}
+                                        </p>
+                                    </div>
+                                </div>
+                                <div className="stepMobileBox_summaryBox__dataBox">
+                                    <div className="deliveryBox_title">
+                                        <p className="deliveryBox_title__content summaryDataBoxTitle">
+                                            Adres odbioru
+                                        </p>
+                                    </div>
+                                    <div className="dataBox_content">
+                                        <p className="dataBox_content__text ">
+                                            Ulica:
+                                        </p>
+                                        <p className="dataBox_content__text dataBoxContentText2">
+                                            {data.street}
+                                        </p>
+                                    </div>
+                                    <div className="dataBox_content">
+                                        <p className="dataBox_content__text">
+                                            Miasto:
+                                        </p>
+                                        <p className="dataBox_content__text dataBoxContentText2">
                                                 {data.city}
-                                            </p>
-                                        </div>
-                                        <div className="dataBox_content">
-                                            <p className="dataBox_content__text">
-                                                Kod pocztowy:
-                                            </p>
-                                            <p className="dataBox_content__text dataBoxContentText2">
-                                                {data.postCode}
-                                            </p>
-                                        </div>
-                                        <div className="dataBox_content">
-                                            <p className="dataBox_content__text">
-                                                Numer Tel:
-                                            </p>
-                                            <p className="dataBox_content__text dataBoxContentText2">
-                                                {data.phone}
-                                            </p>
-                                        </div>
+                                        </p>
                                     </div>
-                                </section>
-                                <section>
-                                    <div className="stepMobileBox_summaryBox__dataBox">
-                                        <div className="deliveryBox_title">
-                                            <p className="deliveryBox_title__content summaryDataBoxTitle">
-                                                Termin odbioru
-                                            </p>
-                                        </div>
-                                        <div className="dataBox_content">
-                                            <p className="dataBox_content__text">
-                                                Data:
-                                            </p>
-                                            <p className="dataBox_content__text dataBoxContentText2">
-                                                {data.date}
-                                            </p>
-                                        </div>
-                                        <div className="dataBox_content">
-                                            <p className="dataBox_content__text">
-                                                Godzina:
-                                            </p>
-                                            <p className="dataBox_content__text dataBoxContentText2">
-                                                {data.time}
-                                            </p>
-                                        </div>
-                                        <div className="dataBox_content">
-                                            <p className="dataBox_content__text">
-                                                Uwagi:
-                                            </p>
-                                            <p className="dataBox_content__text dataBoxContentText2">
-                                                {data.deliveryNote}
-                                            </p>
-                                        </div>
+                                    <div className="dataBox_content">
+                                        <p className="dataBox_content__text">
+                                            Kod pocztowy:
+                                        </p>
+                                        <p className="dataBox_content__text dataBoxContentText2">
+                                            {data.postCode}
+                                        </p>
                                     </div>
-                                </section>
+                                    <div className="dataBox_content">
+                                        <p className="dataBox_content__text">
+                                            Numer Tel:
+                                        </p>
+                                        <p className="dataBox_content__text dataBoxContentText2">
+                                            {data.phone}
+                                        </p>
+                                    </div>
+                                    </div>
+                                <div className="stepMobileBox_summaryBox__dataBox">
+                                    <div className="deliveryBox_title">
+                                        <p className="deliveryBox_title__content summaryDataBoxTitle">
+                                            Termin odbioru
+                                        </p>
+                                    </div>
+                                    <div className="dataBox_content">
+                                        <p className="dataBox_content__text">
+                                            Data:
+                                        </p>
+                                        <p className="dataBox_content__text dataBoxContentText2">
+                                            {data.date}
+                                        </p>
+                                    </div>
+                                    <div className="dataBox_content">
+                                        <p className="dataBox_content__text">
+                                            Godzina:
+                                        </p>
+                                        <p className="dataBox_content__text dataBoxContentText2">
+                                            {data.time}
+                                        </p>
+                                    </div>
+                                    <div className="dataBox_content">
+                                        <p className="dataBox_content__text">
+                                            Uwagi:
+                                        </p>
+                                        <p className="dataBox_content__text dataBoxContentText2">
+                                            {data.deliveryNote}
+                                        </p>
+                                    </div>
+                                </div>
                             </div>
                         </section>
                     </div>
