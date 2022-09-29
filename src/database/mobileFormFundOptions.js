@@ -83,7 +83,7 @@ const mobileFormFund = [
             {
                 "city": "Wrocław",
                 "title": "Fundacja Mauris Facilisis",
-                "type": ["dzieciom","niepełnosprawnym","bezdomnym","samotnym matkom"],
+                "type": ["bezdomnym","samotnym matkom"],
                 "description": "Quisque suscipit ante at lectus rutrum luctus. Cras a auctor tellus." +
                                 " Etiam vehicula at justo quis posuere. Nam a tellus eget nunc ultrices " +
                                 "euismod et eget nibh.",
@@ -183,7 +183,7 @@ const mobileFormFund = [
             {
                 "city": "Lublin",
                 "title": "Fundacja Nullam Molestie" ,
-                "type": ["dzieciom","niepełnosprawnym","bezdomnym","samotnym matkom"],
+                "type": ["dzieciom","bezdomnym","samotnym matkom"],
                 "description": "Nunc ut urna purus. Duis elementum urna nibh, vitae dictum lacus fringilla sit amet.",
                 "id": 24
             },
