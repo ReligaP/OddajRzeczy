@@ -7,30 +7,30 @@ import Icon2 from "../../../assets/Icon-4.svg";
 const FormSummary = ({ data }) => {
     const printBags = () => {
         if (Number(data.bags) === 1) {
-            return `${data.bags} worek ,`
+            return `${data.bags} worek , `
         }
         if (Number(data.bags) >= 2 && Number(data.bags) <= 4) {
-            return `${data.bags} worki ,`
+            return `${data.bags} worki , `
         }
         if (Number(data.bags) > 4 ) {
-            return `${data.bags} worków ,`
+            return `${data.bags} worków , `
         }
-        if ((data.bags.length) === 2 ) {
-            return `Więcej niż 5 worków ,`
+        if ((data.bags) === ">5" ) {
+            return `Więcej niż 5 worków , `
         }
     };
     const printType = () => {
         switch (data.type) {
+            case "ubrania do ponownego użycia":
+                return `${data.type} , ${data.forWhoClothes}`;
             case "ubrania do wyrzucenia":
                 return `${data.type}`;
+            case "zabawki":
+                return `${data.type} , ${data.forWhoToys} `;
             case "książki":
-                return `${data.type} ${data.forWhoBooks}`;
+                return `${data.type} , ${data.forWhoBooks}`;
             case "inne":
                 return `${data.type}`;
-            case "ubrania do ponownego użycia":
-                return `${data.type}, ${data.forWhoClothes}`;
-            case "zabawki":
-                return `${data.type},${data.forWhoToys} w wieku ${data.toysBoyAge} ${data.toysGirlAge} lat`
             default:
                 break;
         }
@@ -142,106 +142,116 @@ const FormSummary = ({ data }) => {
                 </div>
             </BrowserView>
             <MobileView>
-                <div className="StepMobileBox">
-                   <div className="stepMobileBox_header headerStep2 ">
-                       <p className="stepMobileBox_header__content headerStep2_content">
-                           Podsumowanie Twojej darowizny
-                       </p>
-                   </div>
-                    <div className="stepMobileBox_summaryBox">
-                        <div className="stepMobileBox_summaryBox__dataBox">
-                            <div className="deliveryBox_title">
-                                <p className="deliveryBox_title__content summaryDataBoxTitle ">
-                                   Oddajesz
+                <section>
+                    <div className="StepMobileBox">
+                        <header>
+                            <div className="stepMobileBox_header headerStep2">
+                                <p className="stepMobileBox_header__content headerStep2_content">
+                                    Podsumowanie Twojej darowizny
                                 </p>
                             </div>
-                            <div className="dataBox_content">
-                                <ShoppingBagOutlinedIcon sx={{width:"50px",height:"50px",marginRight:"10px"}} />
-                                <p className="dataBox_content__text">
-                                    {printBags()}{printType()}
-                                </p>
+                        </header>
+                        <section>
+                            <div className="stepMobileBox_summaryBox">
+                                <section>
+                                    <div className="stepMobileBox_summaryBox__dataBox">
+                                        <div className="deliveryBox_title">
+                                            <p className="deliveryBox_title__content summaryDataBoxTitle">
+                                                Oddajesz
+                                            </p>
+                                        </div>
+                                        <div className="dataBox_content">
+                                            <ShoppingBagOutlinedIcon sx={{width:"50px",height:"50px",marginRight:"10px"}} />
+                                            <p className="dataBox_content__text">
+                                                {printBags()}{printType()}
+                                            </p>
+                                        </div>
+                                        <div className="dataBox_content">
+                                            <VolunteerActivismIcon sx={{width:"50px",height:"50px",marginRight:"10px"}} />
+                                            <p className="dataBox_content__text">
+                                                {data.fund}&nbsp;{(!data.fund || !data.localization) ? '' : ', '}{data.localization}
+                                            </p>
+                                        </div>
+                                    </div>
+                                </section>
+                                <section>
+                                    <div className="stepMobileBox_summaryBox__dataBox">
+                                        <div className="deliveryBox_title">
+                                            <p className="deliveryBox_title__content summaryDataBoxTitle">
+                                                Adres odbioru
+                                            </p>
+                                        </div>
+                                        <div className="dataBox_content">
+                                            <p className="dataBox_content__text ">
+                                                Ulica:
+                                            </p>
+                                            <p className="dataBox_content__text dataBoxContentText2">
+                                                {data.street}
+                                            </p>
+                                        </div>
+                                        <div className="dataBox_content">
+                                            <p className="dataBox_content__text">
+                                                Miasto:
+                                            </p>
+                                            <p className="dataBox_content__text dataBoxContentText2">
+                                                {data.city}
+                                            </p>
+                                        </div>
+                                        <div className="dataBox_content">
+                                            <p className="dataBox_content__text">
+                                                Kod pocztowy:
+                                            </p>
+                                            <p className="dataBox_content__text dataBoxContentText2">
+                                                {data.postCode}
+                                            </p>
+                                        </div>
+                                        <div className="dataBox_content">
+                                            <p className="dataBox_content__text">
+                                                Numer Tel:
+                                            </p>
+                                            <p className="dataBox_content__text dataBoxContentText2">
+                                                {data.phone}
+                                            </p>
+                                        </div>
+                                    </div>
+                                </section>
+                                <section>
+                                    <div className="stepMobileBox_summaryBox__dataBox">
+                                        <div className="deliveryBox_title">
+                                            <p className="deliveryBox_title__content summaryDataBoxTitle">
+                                                Termin odbioru
+                                            </p>
+                                        </div>
+                                        <div className="dataBox_content">
+                                            <p className="dataBox_content__text">
+                                                Data:
+                                            </p>
+                                            <p className="dataBox_content__text dataBoxContentText2">
+                                                {data.date}
+                                            </p>
+                                        </div>
+                                        <div className="dataBox_content">
+                                            <p className="dataBox_content__text">
+                                                Godzina:
+                                            </p>
+                                            <p className="dataBox_content__text dataBoxContentText2">
+                                                {data.time}
+                                            </p>
+                                        </div>
+                                        <div className="dataBox_content">
+                                            <p className="dataBox_content__text">
+                                                Uwagi:
+                                            </p>
+                                            <p className="dataBox_content__text dataBoxContentText2">
+                                                {data.deliveryNote}
+                                            </p>
+                                        </div>
+                                    </div>
+                                </section>
                             </div>
-                            <div className="dataBox_content">
-                                <VolunteerActivismIcon sx={{width:"50px",height:"50px",marginRight:"10px"}} />
-                                <p className="dataBox_content__text">
-                                    {data.fund}&nbsp;
-                                    {(data.fund === undefined || data.localization === undefined) ? '' : ', '}
-                                    {data.localization}
-                                </p>
-                            </div>
-                        </div>
-                        <div className="stepMobileBox_summaryBox__dataBox">
-                            <div className="deliveryBox_title">
-                                <p className="deliveryBox_title__content summaryDataBoxTitle">
-                                    Adres odbioru
-                                </p>
-                            </div>
-                            <div className="dataBox_content">
-                                <p className="dataBox_content__text ">
-                                    Ulica:
-                                </p>
-                                <p className="dataBox_content__text dataBoxContentText2">
-                                    {data.street}
-                                </p>
-                            </div>
-                            <div className="dataBox_content">
-                                <p className="dataBox_content__text">
-                                    Miasto:
-                                </p>
-                                <p className="dataBox_content__text dataBoxContentText2">
-                                    {data.city}
-                                </p>
-                            </div>
-                            <div className="dataBox_content">
-                                <p className="dataBox_content__text">
-                                    Kod pocztowy:
-                                </p>
-                                <p className="dataBox_content__text dataBoxContentText2">
-                                    {data.postCode}
-                                </p>
-                            </div>
-                            <div className="dataBox_content">
-                                <p className="dataBox_content__text">
-                                    Numer Tel:
-                                </p>
-                                <p className="dataBox_content__text dataBoxContentText2">
-                                    {data.phone}
-                                </p>
-                            </div>
-                        </div>
-                        <div className="stepMobileBox_summaryBox__dataBox">
-                            <div className="deliveryBox_title">
-                                <p className="deliveryBox_title__content summaryDataBoxTitle">
-                                    Termin odbioru
-                                </p>
-                            </div>
-                            <div className="dataBox_content">
-                                <p className="dataBox_content__text">
-                                    Data:
-                                </p>
-                                <p className="dataBox_content__text dataBoxContentText2">
-                                    {data.date}
-                                </p>
-                            </div>
-                            <div className="dataBox_content">
-                                <p className="dataBox_content__text">
-                                    Godzina:
-                                </p>
-                                <p className="dataBox_content__text dataBoxContentText2">
-                                    {data.time}
-                                </p>
-                            </div>
-                            <div className="dataBox_content">
-                                <p className="dataBox_content__text">
-                                    Uwagi:
-                                </p>
-                                <p className="dataBox_content__text dataBoxContentText2">
-                                    {data.note}
-                                </p>
-                            </div>
-                        </div>
+                        </section>
                     </div>
-                </div>
+                </section>
             </MobileView>
         </>
     );
