@@ -15,26 +15,54 @@ const FormStep4 = ({ update }) => {
     const handlerClickStreet = (e) => {
         setStreet(e.target.value);
     };
+    const handlerClickStreetUpdate = () => {
+        update("street", street);
+        setCurrentInput('');
+    };
     const handlerClickCity = (e) => {
         setCity(e.target.value);
+    };
+    const handlerClickCityUpdate = () => {
+        update("city", city);
+        setCurrentInput('');
     };
     const handlerClickCode = (e) => {
         setCode(e.target.value);
     };
+    const handlerClickCodeUpdate = () => {
+        update("postCode", code);
+        setCurrentInput('');
+    };
     const handlerClickTel = (e) => {
         setTel(e.target.value);
+    };
+    const handlerClickTelUpdate = () => {
+        update("phone", tel);
+        setCurrentInput('');
     };
     const handlerClickDate = (e) => {
         setDate(e.target.value);
     };
+    const handlerClickDateUpdate = () => {
+        update("date", date);
+        setCurrentInput('');
+    };
     const handlerClickHour = (e) => {
         setHour(e.target.value);
+    };
+    const handlerClickHourUpdate = () => {
+        update("time", hour);
+        setCurrentInput('');
     };
     const handlerClickDelivery = (e) => {
         setDelivery(e.target.value);
     };
+    const handlerClickDeliveryUpdate = () => {
+        update("deliveryNote", delivery);
+        setCurrentInput('');
+    };
     const currentSelector = (e) => {
-        setCurrentInput(e.target.name)
+        setCurrentInput(e.target.name);
     };
     return (
         <>
@@ -135,156 +163,135 @@ const FormStep4 = ({ update }) => {
                 </div>
             </BrowserView>
             <MobileView>
-                <div className="StepMobileBox">
-                    <div className="stepMobileBox_header headerStep2">
-                        <p className="stepMobileBox_header__content headerStep2_content">
-                            Wybierz datę odbioru rzecz przez kuriera
-                        </p>
-                    </div>
-                    <div className="stepMobileBox_warning warningStep4">
-                        <InfoOutlinedIcon sx={{fontSize:"50px",color:"#fff"}} />
-                        <div className="stepMobileBox_warning__content">
-                            <p className="stepWarningText warningTextStep2">
-                                Podaj adres oraz termin odbioru rzeczy.
-                            </p>
-                        </div>
-                    </div>
-                    <div className="stepMobileBox_step4Box">
-                        <div className="stepMobileBox_step4Box__deliveryBox">
-                            <div className="deliveryBox_title">
-                                <p className="deliveryBox_title__content">
-                                    Adres odbioru
+                <section>
+                    <div className="StepMobileBox">
+                        <header>
+                            <div className="stepMobileBox_header headerStep2">
+                                <p className="stepMobileBox_header__content headerStep2_content">
+                                    Wybierz datę odbioru rzecz przez kuriera
                                 </p>
                             </div>
-                            <div className="deliveryBox_input">
-                                <p className="deliveryBox_input__title">
-                                    Ulica
+                        </header>
+                        <div className="stepMobileBox_warning warningStep4">
+                            <InfoOutlinedIcon sx={{fontSize:"50px",color:"#fff"}} />
+                            <div className="stepMobileBox_warning__content">
+                                <p className="stepWarningText warningTextStep2">
+                                    Podaj adres oraz termin odbioru rzeczy.
                                 </p>
-                                <input
-                                    className={`step4Box_box__input deliveryBox_input__content 
-                                                ${currentInput === "street" ? 'focusStep4Box' : ''} `
-                                                }
-                                    name="street"
-                                    onChange={handlerClickStreet}
-                                    onClick={currentSelector}
-                                    onBlur={() => {
-                                        update("street", street);
-                                        setCurrentInput('');
-                                    }}
-                                />
-                            </div>
-                            <div className="deliveryBox_input">
-                                <p className="deliveryBox_input__title">
-                                    Miasto
-                                </p>
-                                <input
-                                    className={`step4Box_box__input deliveryBox_input__content 
-                                                ${currentInput === "city" ? 'focusStep4Box' : ''} `
-                                                }
-                                    name="city"
-                                    onChange={handlerClickCity}
-                                    onFocus={currentSelector}
-                                    onBlur={() => {
-                                        update("city", city);
-                                        setCurrentInput('');
-                                    }}
-                                />
-                            </div>
-                            <div className="deliveryBox_input">
-                                <p className="deliveryBox_input__title">
-                                    Kod Pocztowy
-                                </p>
-                                <input
-                                    className={`step4Box_box__input deliveryBox_input__content 
-                                                ${currentInput === "code" ? 'focusStep4Box' : ''} `
-                                            }
-                                    name="code"
-                                    onChange={handlerClickCode}
-                                    onFocus={currentSelector}
-                                    onBlur={() => {
-                                        update("postCode", code);
-                                        setCurrentInput('');
-                                    }}
-                                />
-                            </div>
-                            <div className="deliveryBox_input">
-                                <p className="deliveryBox_input__title">
-                                    Nr Telefonu
-                                </p>
-                                <input
-                                    className={`step4Box_box__input deliveryBox_input__content 
-                                                ${currentInput === "tel" ? 'focusStep4Box' : ''} `
-                                            }
-                                    name="tel"
-                                    onChange={handlerClickTel}
-                                    onFocus={currentSelector}
-                                    onBlur={() => {
-                                        update("phone", tel);
-                                        setCurrentInput('');
-                                    }}
-                                />
                             </div>
                         </div>
-                        <div className="stepMobileBox_step4Box__deliveryBox">
-                            <div className="deliveryBox_title">
-                                <p className="deliveryBox_title__content">
-                                    Termin odbioru
-                                </p>
-                            </div>
-                            <div className="deliveryBox_input">
-                                <p className="deliveryBox_input__title">
-                                    Data
-                                </p>
-                                <input
-                                    className={`step4Box_box__input deliveryBox_input__content 
-                                                ${currentInput === "date" ? 'focusStep4Box' : ''} `
-                                            }
-                                    name="date"
-                                    onChange={handlerClickDate}
-                                    onFocus={currentSelector}
-                                    onBlur={() => {
-                                        update("date", date);
-                                        setCurrentInput('');
-                                    }}
-                                />
-                            </div>
-                            <div className="deliveryBox_input">
-                                <p className="deliveryBox_input__title">
-                                    Godzina
-                                </p>
-                                <input
-                                    className={`step4Box_box__input deliveryBox_input__content 
-                                                ${currentInput === "time" ? 'focusStep4Box' : ''} `
-                                            }
-                                    name="time"
-                                    onChange={handlerClickHour}
-                                    onFocus={currentSelector}
-                                    onBlur={() => {
-                                        update("time", hour);
-                                        setCurrentInput('');
-                                    }}
-                                />
-                            </div>
-                            <div className="deliveryBox_textarea">
-                                <p className="deliveryBox_input__title deliveryBox_textarea__title">
-                                    Uwagi
-                                </p>
-                                <textarea
-                                    className={`step4Box_box__input deliveryBox_input__content 
+                        <form>
+                            <div className="stepMobileBox_step4Box">
+                                <div className="stepMobileBox_step4Box__deliveryBox">
+                                    <div className="deliveryBox_title">
+                                        <p className="deliveryBox_title__content">
+                                            Adres odbioru
+                                        </p>
+                                    </div>
+                                    <div className="deliveryBox_input">
+                                        <p className="deliveryBox_input__title">
+                                            Ulica
+                                        </p>
+                                        <input
+                                            className={`step4Box_box__input deliveryBox_input__content 
+                                                ${currentInput === "street" ? 'focusStep4Box' : ''} `}
+                                            name="street"
+                                            onChange={handlerClickStreet}
+                                            onClick={currentSelector}
+                                            onBlur={handlerClickStreetUpdate}
+                                        />
+                                    </div>
+                                    <div className="deliveryBox_input">
+                                        <p className="deliveryBox_input__title">
+                                            Miasto
+                                        </p>
+                                        <input
+                                            className={`step4Box_box__input deliveryBox_input__content 
+                                                ${currentInput === "city" ? 'focusStep4Box' : ''} `}
+                                            name="city"
+                                            onChange={handlerClickCity}
+                                            onFocus={currentSelector}
+                                            onBlur={handlerClickCityUpdate}
+                                        />
+                                    </div>
+                                    <div className="deliveryBox_input">
+                                        <p className="deliveryBox_input__title">
+                                            Kod Pocztowy
+                                        </p>
+                                        <input
+                                            className={`step4Box_box__input deliveryBox_input__content 
+                                                ${currentInput === "code" ? 'focusStep4Box' : ''} `}
+                                            name="code"
+                                            onChange={handlerClickCode}
+                                            onFocus={currentSelector}
+                                            onBlur={handlerClickCodeUpdate}
+                                        />
+                                    </div>
+                                    <div className="deliveryBox_input">
+                                        <p className="deliveryBox_input__title">
+                                            Nr Telefonu
+                                        </p>
+                                        <input
+                                            className={`step4Box_box__input deliveryBox_input__content 
+                                                ${currentInput === "tel" ? 'focusStep4Box' : ''} `}
+                                            name="tel"
+                                            onChange={handlerClickTel}
+                                            onFocus={currentSelector}
+                                            onBlur={handlerClickTelUpdate}
+                                        />
+                                    </div>
+                                </div>
+                                <div className="stepMobileBox_step4Box__deliveryBox">
+                                    <div className="deliveryBox_title">
+                                        <p className="deliveryBox_title__content">
+                                            Termin odbioru
+                                        </p>
+                                    </div>
+                                    <div className="deliveryBox_input">
+                                        <p className="deliveryBox_input__title">
+                                            Data
+                                        </p>
+                                        <input
+                                            className={`step4Box_box__input deliveryBox_input__content 
+                                                ${currentInput === "date" ? 'focusStep4Box' : ''} `}
+                                            name="date"
+                                            onChange={handlerClickDate}
+                                            onFocus={currentSelector}
+                                            onBlur={handlerClickDateUpdate}
+                                        />
+                                    </div>
+                                    <div className="deliveryBox_input">
+                                        <p className="deliveryBox_input__title">
+                                            Godzina
+                                        </p>
+                                        <input
+                                            className={`step4Box_box__input deliveryBox_input__content 
+                                                ${currentInput === "time" ? 'focusStep4Box' : ''} `}
+                                            name="time"
+                                            onChange={handlerClickHour}
+                                            onFocus={currentSelector}
+                                            onBlur={handlerClickHourUpdate}
+                                        />
+                                    </div>
+                                    <div className="deliveryBox_textarea">
+                                        <p className="deliveryBox_input__title deliveryBox_textarea__title">
+                                            Uwagi
+                                        </p>
+                                        <textarea
+                                            className={`step4Box_box__input deliveryBox_input__content 
                                                 deliveryBox_textarea__content
                                                 ${currentInput === "delivery" ? 'focusStep4Box' : ''}`}
-                                    name="delivery"
-                                    onChange={handlerClickDelivery}
-                                    onFocus={currentSelector}
-                                    onBlur={() => {
-                                        update("deliveryNote", delivery);
-                                        setCurrentInput('');
-                                    }}
-                                />
+                                            name="delivery"
+                                            onChange={handlerClickDelivery}
+                                            onFocus={currentSelector}
+                                            onBlur={handlerClickDeliveryUpdate}
+                                        />
+                                    </div>
+                                </div>
                             </div>
-                        </div>
+                        </form>
                     </div>
-                </div>
+                </section>
             </MobileView>
         </>
     );
