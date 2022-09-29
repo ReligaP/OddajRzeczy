@@ -1,4 +1,4 @@
-const mobileFormFund = [
+const mobileFormFundOptions = [
             {
                 "city": "Warszawa",
                 "title": "Fundacja Lorem Ipsum",
@@ -204,4 +204,4 @@ const mobileFormFund = [
             },
         ]
 
-export default mobileFormFund;
+export default mobileFormFundOptions;
