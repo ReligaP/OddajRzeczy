@@ -1,6 +1,5 @@
 
 const MobileFormHeader = () => {
-
     return (
         <header>
             <div className="mobileFormHeader">
