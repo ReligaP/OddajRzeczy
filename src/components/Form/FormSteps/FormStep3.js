@@ -181,46 +181,46 @@ const FormStep3 = ({ update }) => {
                                 </p>
                             </div>
                         </div>
-                        <form>
-                            <div className="stepMobileBox_step3Box">
-                                <div className="stepMobileBox_step3Box__city">
-                                    <p className="step3Box_text">
-                                        Lokalizacja
-                                    </p>
-                                    <div className="dropDownContainerStep2 dropDownStep3">
-                                        <div
-                                            className="dropDownHeaderStep2"
-                                            onClick={togglingCity}
-                                        >
-                                            {city}
-                                            {isOpen ? <ArrowUpwardIcon fontSize="xsmall"/> : <ArrowDownwardIcon fontSize="xsmall"/>}
-                                        </div>
-                                        {
-                                            isOpen
-                                            &&
-                                            (
-                                                <div className="dropDownListContainer">
-                                                    <ul className="dropDownListStep2">
-                                                        {
-                                                            mobileFormCityOptions.map((option,index) => (
-                                                                <li
-                                                                    className={`listItemStep2 ${currentCase === index?'focusStep2':''}`}
-                                                                    onClick={onOptionClicked(option)}
-                                                                    key={index}
-                                                                    value={index}
-                                                                    onTouchStart={currentSelector}
-                                                                >
-                                                                    {option}
-                                                                </li>
-                                                            ))
-                                                        }
-                                                    </ul>
-                                                </div>
-                                            )
-                                        }
+                        <div className="stepMobileBox_step3Box">
+                            <div className="stepMobileBox_step3Box__city">
+                                <p className="step3Box_text">
+                                    Lokalizacja
+                                </p>
+                                <div className="dropDownContainerStep2 dropDownStep3">
+                                    <div
+                                        className="dropDownHeaderStep2"
+                                        onClick={togglingCity}
+                                    >
+                                        {city}
+                                        {isOpen ? <ArrowUpwardIcon fontSize="xsmall"/> : <ArrowDownwardIcon fontSize="xsmall"/>}
                                     </div>
+                                    {
+                                        isOpen
+                                        &&
+                                        (
+                                            <div className="dropDownListContainer">
+                                                <ul className="dropDownListStep2">
+                                                    {
+                                                        mobileFormCityOptions.map((option,index) => (
+                                                            <li
+                                                                className={`listItemStep2 ${currentCase === index?'focusStep2':''}`}
+                                                                onClick={onOptionClicked(option)}
+                                                                key={index}
+                                                                value={index}
+                                                                onTouchStart={currentSelector}
+                                                            >
+                                                                {option}
+                                                            </li>
+                                                            )
+                                                        )
+                                                    }
+                                                </ul>
+                                            </div>
+                                        )
+                                    }
                                 </div>
-                                <div className="stepMobileBox_step3Box__who">
+                            </div>
+                            <div className="stepMobileBox_step3Box__who">
                                     <p className="step3Box_text">
                                         Komu chcesz pomóc
                                     </p>
@@ -255,22 +255,22 @@ const FormStep3 = ({ update }) => {
                                         </button>
                                     </div>
                                 </div>
-                                <div className="stepMobileBox_step3Box__search">
-                                    <button
-                                        className="step3Box_button"
-                                        onClick={handleClickActive}
+                            <div className="stepMobileBox_step3Box__search">
+                                <button
+                                    className="step3Box_button"
+                                    onClick={handleClickActive}
+                                >
+                                    szukaj
+                                </button>
+                                {
+                                    active
+                                    &&
+                                    <div
+                                        className="step3BoxSearchContainer"
                                     >
-                                        szukaj
-                                    </button>
-                                    {
-                                        active
-                                        &&
-                                        <div
-                                            className="step3BoxSearchContainer"
-                                        >
-                                            {
-                                                mobileFormFundOptions.filter(el =>
-                                                    (el.city === city && (el.type.includes(`${who}`)))).map((item) => {
+                                        {
+                                            mobileFormFundOptions.filter(el =>
+                                                (el.city === city && (el.type.includes(`${who}`)))).map((item) => {
                                                     return(
                                                         <li
                                                             key={item.id}
@@ -297,21 +297,20 @@ const FormStep3 = ({ update }) => {
                                                         </li>
                                                     )
                                                 })
-                                            }
-                                        </div>
-                                    }
-                                </div>
-                                <div className="stepMobileBox_step3Box__fundOther">
-                                    <p className="step3Box_text">
-                                        Wpisz nazwę konkretnej organizacji (opcjonalnie)
-                                    </p>
-                                    <input
-                                        className="content3Box_input fundOtherInput"
-                                        onChange={handleClickOther}
-                                    />
-                                </div>
+                                        }
+                                    </div>
+                                }
                             </div>
-                        </form>
+                            <div className="stepMobileBox_step3Box__fundOther">
+                                <p className="step3Box_text">
+                                    Wpisz nazwę konkretnej organizacji (opcjonalnie)
+                                </p>
+                                <input
+                                    className="content3Box_input fundOtherInput"
+                                    onChange={handleClickOther}
+                                />
+                            </div>
+                        </div>
                     </div>
                 </section>
             </MobileView>
