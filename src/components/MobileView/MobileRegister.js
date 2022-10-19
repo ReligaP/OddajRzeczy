@@ -1,13 +1,12 @@
 
 const MobileRegister = (props) => {
-
     return (
-        <div className="mobileRegisterBox">
-            <div className="mobileSignInBox_title">
-                <p className="mobileSignInBox_title__content">
+        <main className="mobileRegisterBox">
+            <header className="mobileSignInBox_title">
+                <p className="mobileSignInBox_title__text">
                     Załóż konto
                 </p>
-            </div>
+            </header>
             <form
                 className="mobileSignInBox_form"
                 onSubmit={props.onClick}
@@ -63,7 +62,7 @@ const MobileRegister = (props) => {
                     </button>
                 </div>
             </form>
-        </div>
+        </main>
     );
 };
 

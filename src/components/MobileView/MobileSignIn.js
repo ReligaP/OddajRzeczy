@@ -1,13 +1,12 @@
 
 const MobileSignIn = (props) => {
-
     return (
-        <div className="mobileSignInBox" >
-            <div className="mobileSignInBox_title">
-                <p className="mobileSignInBox_title__content">
+        <main className="mobileSignInBox" >
+            <header className="mobileSignInBox_title">
+                <p className="mobileSignInBox_title__text">
                     Zaloguj się
                 </p>
-            </div>
+            </header>
             <form
                 className="mobileSignInBox_form"
                 onSubmit={props.onClick}
@@ -50,7 +49,7 @@ const MobileSignIn = (props) => {
                     </button>
                 </div>
             </form>
-        </div>
+        </main>
     );
 };
 
