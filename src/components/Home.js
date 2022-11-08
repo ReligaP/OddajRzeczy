@@ -1,7 +1,6 @@
 import { useEffect , useState } from 'react';
 import { getAuth , onAuthStateChanged } from "firebase/auth";
 import { BrowserView , MobileView } from 'react-device-detect';
-import app from "../firebase/firebaseconfig";
 import HomeHeader from "./HomeHeader";
 import HomeThreeColumns from "./HomeThreeColumns";
 import HomeSimpleSteps from "./HomeSimpleSteps";
@@ -11,11 +10,10 @@ import HomeContact from "./HomeContact";
 import MobileHeader from "./MobileView/MobileHeader";
 import MobileFooter from "./MobileView/MobileFooter";
 import MobileHome from "./MobileView/MobileHome";
-
+import app from "../firebase/firebaseconfig";
 
 
 const Home = () => {
-
     const [email, setEmail] = useState("");
     useEffect(() => {
         const auth = getAuth(app);
@@ -30,7 +28,6 @@ const Home = () => {
             }
         });
     }, []);
-
     return (
         <>
             <BrowserView>
