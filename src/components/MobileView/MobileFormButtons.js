@@ -34,14 +34,14 @@ const MobileFormButtons = (props) => {
                 </button>
             }
             {
-                props.page === 6
+                props.page >= 6
                 &&
                 <Link to="/" className="mobileFormButtonLink mobileFormButton mobileThanksButton">
                         Strona główna
                 </Link>
             }
             {
-                props.page === 6
+                props.page >= 6
                 &&
                 <Link
                     className="mobileFormButtonLink mobileFormButton mobileThanksButton"
