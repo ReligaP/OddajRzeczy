@@ -125,7 +125,7 @@ const FormSelect = ( props ) => {
                                     page === 5 && <FormSummary data={data} />
                                 }
                                 {
-                                    page === 6 && <FormThanks />
+                                    page >= 6 && <FormThanks />
                                 }
                                 <MobileFormButtons
                                     page={page}

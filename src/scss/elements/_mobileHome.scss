@@ -3,113 +3,168 @@
 
 .mobileHomeBox {
   width: 100%;
-  height: 820px;
-  @media (min-width: 600px) {
-    height: 850px;
-  }
+  height: auto;
 
-  &_content {
-    background-color: $mobile-second-color;
-    height: 200px;
+  &_greeting {
+    width: 100%;
+    height: auto;
     display: flex;
-    justify-content: space-around;
-    align-items: center;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
-    &__title {
-      font-size: 16px;
-      color: #3699be;
-      @media (min-width: 600px) {
-        font-size: 19px;
-      }
-    }
-
-    &__text {
-      color: #3699be;
-      font-size: 20px;
-      font-weight: bold;
-    }
-
-    &__login {
-      width: 90%;
-      height: 50px;
+    &__content {
+      width: 100%;
+      padding: 25px 20px;
+      background-color: $mobile-second-color;
+      height: auto;
       display: flex;
+      flex-direction: column;
+      align-items: center;
       justify-content: center;
-      align-items: center;
-    }
-
-    &__buttons {
-      height: 50px;
-      width: 300px;
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
+      @media (min-width: 600px) {
+        padding: 30px 20px;
+      }
     }
   }
 
   &_simpleSteps {
-      width: 100%;
-      height: 250px;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-      align-items: center;
-
-    &__title {
-      font-size: 26px;
-      margin-top: 25px;
-      margin-bottom: 20px;
-      font-weight: bold;
-      color: #333333;
-      @media (min-width: 600px) {
-        font-size: 31px;
-        margin-top: 30px;
-      }
-    }
+    width: 100%;
+    height: auto;
+    padding-top: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
 
     &__content {
-      width: 95%;
-      height: 180px;
-      margin-top: 20px;
+      width: 100%;
+      height: auto;
+      padding: 25px 8px;
       display: flex;
       justify-content: center;
       align-items: center;
+      @media (min-width: 600px) {
+        padding: 30px 50px;
+        justify-content: space-around;
+      }
     }
   }
 
   &_whoWeHelp {
     width: 100%;
-    height: 370px;
+    height: auto;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
-
-    &__title {
-      font-size: 26px;
-      margin-top: 10px;
-      margin-bottom: 25px;
-      font-weight: bold;
-      color: #333333;
-      @media (min-width: 600px) {
-        margin-bottom: 35px;
-        font-size: 31px;
-      }
-    }
 
     &__content {
       width: 100%;
-      height: 300px;
+      height: auto;
+      padding: 25px 0;
       display: flex;
-      justify-content: space-around;
+      flex-direction: column;
+      justify-content: flex-start;
+      @media (min-width: 600px) {
+        padding: 30px 0;
+      }
     }
   }
-
 }
 
-.mobileHomeBox_button {
-  width: 125px;
-  height: 100%;
+.mobileHomeBox_sectionHeader {
+  padding: 15px 0;
+  @media (min-width: 600px) {
+    padding: 20px 0;
+  }
+  &__text {
+    font-size: 26px;
+    line-height: 28px;
+    font-weight: bold;
+    color: #333333;
+    @media (min-width: 600px) {
+      font-size: 31px;
+      line-height: 33px;
+    }
+  }
+}
+
+.mobileHomeBox_sectionMainHeader {
+  padding: 45px 0 65px;
+  @media (min-width: 600px) {
+    padding: 55px 0 75px;
+  }
+}
+
+// Greeting Section
+
+.mobileHomeBox_greetingSectionText {
+  font-size: 18px;
+  line-height: 19px;
+  padding: 10px 0;
+  font-weight: 600;
+  @media (min-width: 600px) {
+    font-size: 20px;
+    line-height: 21px;
+    padding: 15px 0;
+  }
+}
+
+.mobileHomeBox_greetingSectionTextBox {
+  font-size: 20px;
+  line-height: 22px;
+  padding: 10px 0;
+  color: $mobile-third-color;
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  @media (min-width: 600px) {
+    flex-direction: row;
+    font-size: 22px;
+    line-height: 24px;
+    padding: 15px 0;
+  }
+
+  &_uppercaseText {
+    text-transform: uppercase;
+  }
+}
+
+.mobileHomeBox_greetingSectionLoggedOut {
+  height: auto;
+  width: 100%;
+  padding-top: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.mobileHomeBox_greetingSectionLogged {
+  width: 100%;
+  height: auto;
+  margin-top: 20px;
+  padding: 15px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: #C9C9C9;
+
+  &__loginBar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.mobileHomeBox_greetingSectionLink {
+  width: 140px;
+  height: 50px;
+  margin: 10px 0;
   background-color: $mobile-color;
   display: flex;
   justify-content: center;
@@ -118,14 +173,23 @@
   font-weight: bold;
   font-size: 16px;
   text-transform: uppercase;
-
-  &__link {
-    color: #fff;
-    text-decoration: none;
+  text-decoration: none;
+  @media (min-width: 600px) {
+    margin: 15px 0;
+    width: 150px;
   }
 }
 
-.mobileHomeBox_steps {
+.mobileHomeBox_greetingDonationLink {
+  width: 160px;
+  @media (min-width: 600px) {
+    width: 170px;
+  }
+}
+
+// SimpleSteps Section
+
+.mobileHomeBox_stepsSectionBox {
   width: 25%;
   height: 100%;
   display: flex;
@@ -133,67 +197,63 @@
   justify-content: flex-start;
   align-items: center;
   @media (min-width: 600px) {
-    margin-left: 5px;
+    width: 20%;
   }
+
   &__text {
-    font-size: 17px;
-    margin-top: 25px;
+    font-size: 16px;
+    line-height: 17px;
+    margin-top: 15px;
     text-align: center;
     @media (min-width: 600px) {
       font-size: 19px;
+      line-height: 20px;
+      margin-top: 25px;
     }
   }
 }
 
-.mobileHomeBox_who {
-  width: 125px;
-  height: 280px;
+// WhoWeHelp Section
+
+.mobileHomeBox_whoWeHelpSectionBox {
+  width: 100%;
+  height: auto;
+  background-color: $mobile-second-color;
+  margin-bottom: 30px;
+  padding: 15px 20px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
   @media (min-width: 600px) {
-    width: 170px;
-    height: 300px;
+    padding: 10px 80px 20px;
+    margin-bottom: 35px;
   }
 
-  &__content {
-    width: 100px;
-    height: 100px;
-    background-color: $mobile-color;
-    border-radius: 50%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 15px;
-    font-size: 16px;
+  &:last-of-type{
+    margin-bottom: 0;
+  }
+
+  &__title {
+    font-size: 22px;
+    line-height: 24px;
+    font-weight: bold;
+    color: $mobile-third-color;
+    padding-bottom: 15px;
     @media (min-width: 600px) {
-      width: 120px;
-      height: 120px;
-      font-size: 17px;
-      margin-bottom: 25px;
+      font-size: 24px;
+      line-height: 26px;
+      padding-bottom: 25px;
     }
   }
-}
 
-.mobileHomeBox_login {
-  font-size: 18px;
-  color: #000;
-  font-weight: 600;
-}
-
-.whoContent_text {
-  font-size: 13px;
-  text-align: center;
-  @media (min-width: 600px) {
-    font-size: 15.5px;
-  }
-}
-
-.organizationsContent {
-  font-size: 13px;
-  @media (min-width: 600px) {
-    font-size: 15px;
+  &__text {
+    font-size: 16px;
+    line-height: 18px;
+    text-align: justify;
+    @media (min-width: 600px) {
+      font-size: 18px;
+      line-height: 20px;
+    }
   }
 }
