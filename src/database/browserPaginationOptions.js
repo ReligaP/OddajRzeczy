@@ -1,4 +1,4 @@
-const data = {
+const browserPaginationOptions = {
     organizations : {
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit," +
             " sed do eiusmod tempor incididunt ut labore et " +
@@ -111,5 +111,5 @@ const data = {
 };
 
 
-export default data;
+export default browserPaginationOptions;
 

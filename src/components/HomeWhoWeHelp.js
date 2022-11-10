@@ -1,10 +1,10 @@
 import { useState } from 'react';
 import Decoration from "../assets/Decoration.svg"
-import data from "../database/data";
+import browserPaginationOptions from "../database/browserPaginationOptions";
 
 const HomeWhoWeHelp = () => {
-        const [items,setItems] = useState(data.fund.items);
-        const [title,setTitle] = useState(data.fund.description);
+        const [items,setItems] = useState(browserPaginationOptions.fund.items);
+        const [title,setTitle] = useState(browserPaginationOptions.fund.description);
         const [currentPage, setCurrentPage] = useState(1);
         const [todosPerPage] = useState(3);
 
@@ -20,18 +20,18 @@ const HomeWhoWeHelp = () => {
             setCurrentPage(Number(e.target.id));
         }
         const handleClickFund = () => {
-            setItems(data.fund.items);
-            setTitle(data.fund.description);
+            setItems(browserPaginationOptions.fund.items);
+            setTitle(browserPaginationOptions.fund.description);
             setCurrentPage(1);
         }
         const handleClickOrg = () => {
-            setItems(data.organizations.items);
-            setTitle(data.organizations.description);
+            setItems(browserPaginationOptions.organizations.items);
+            setTitle(browserPaginationOptions.organizations.description);
             setCurrentPage(1);
         }
         const handleClickLocal = () => {
-            setItems(data.local.items);
-            setTitle(data.local.description);
+            setItems(browserPaginationOptions.local.items);
+            setTitle(browserPaginationOptions.local.description);
             setCurrentPage(1);
         }
 
