@@ -1,7 +1,7 @@
 import { Link as ScrollLink } from "react-scroll";
 import { Link } from "react-router-dom";
 import app from "../firebase/firebaseconfig";
-import { getAuth, signOut} from "firebase/auth";
+import { getAuth , signOut } from "firebase/auth";
 import HomeHeroImage from "../assets/Home-Hero-Image.jpg";
 import Decoration from "../assets/Decoration.svg";
 
@@ -15,21 +15,23 @@ const HomeHeader = (props) => {
             const errorMessage = error.message;
             console.log(errorCode, errorMessage);
         })
-    }
+    };
     return (
-        <div className="homeHeaderBox">
-            <div className="homeHeaderBox_Image"
-                 style={{backgroundImage:`url(${HomeHeroImage})`}}>
+        <section className="homeHeaderBox">
+            <div
+                className="homeHeaderBox_image"
+                style={{backgroundImage:`url(${HomeHeroImage})`}}
+            >
             </div>
-            <div className="homeHeaderBox_Content">
-                <div className="homeHeaderBox_Content__UpMenu">
+            <div className="homeHeaderBox_content">
+                <div className="homeHeaderBox_content__upMenu">
                     {
                         props.email ?
                             <div className="upMenuTopLogged">
-                                <p className="upMenuTopLogged_Email">
+                                <p className="upMenuTopLogged_email">
                                     Cześć {props.email} !
                                 </p>
-                                <div className="upMenuTopLogged_Box1">
+                                <div className="upMenuTopLogged_box1">
                                     <Link
                                         className="LinkButton"
                                         to="/oddaj-rzeczy"
@@ -37,9 +39,7 @@ const HomeHeader = (props) => {
                                         Oddaj rzeczy
                                     </Link>
                                 </div>
-                                <div
-                                    className="upMenuTopLogged_Box2"
-                                >
+                                <div className="upMenuTopLogged_box2">
                                     <Link
                                         onClick={ClickHandler}
                                         className="LinkButton"
@@ -51,23 +51,29 @@ const HomeHeader = (props) => {
                             </div>
                             :
                             <div className="upMenuTop">
-                                <div className="upMenuTop_Box1">
-                                    <Link className="Link" to="/logowanie">
+                                <div className="upMenuTop_box1">
+                                    <Link
+                                        className="Link"
+                                        to="/logowanie"
+                                    >
                                         Zaloguj
                                     </Link>
-                            </div>
-                                <div className="upMenuTop_Box2">
-                                    <Link className="Link" to="/rejestracja">
+                                </div>
+                                <div className="upMenuTop_box2">
+                                    <Link
+                                        className="Link"
+                                        to="/rejestracja"
+                                    >
                                         Załóż konto
                                     </Link>
                                 </div>
                             </div>
                     }
                     <div className="upMenuDown">
-                        <div className="upMenuDown_Box">
+                        <div className="upMenuDown_box">
                             Start
                         </div>
-                        <div className="upMenuDown_Box">
+                        <div className="upMenuDown_box">
                             <ScrollLink
                                 activeClass="active"
                                 className="ScrollLink"
@@ -80,7 +86,7 @@ const HomeHeader = (props) => {
                                 O co chodzi
                             </ScrollLink>
                         </div>
-                        <div className="upMenuDown_Box">
+                        <div className="upMenuDown_box">
                             <ScrollLink
                                 activeClass="active"
                                 className="ScrollLink"
@@ -93,7 +99,7 @@ const HomeHeader = (props) => {
                                 O nas
                             </ScrollLink>
                         </div>
-                        <div className="upMenuDown_Box">
+                        <div className="upMenuDown_box">
                             <ScrollLink
                                 activeClass="active"
                                 className="ScrollLink"
@@ -106,7 +112,7 @@ const HomeHeader = (props) => {
                                 Fundacja i organizacje
                             </ScrollLink>
                         </div>
-                        <div className="upMenuDown_Box">
+                        <div className="upMenuDown_box">
                             <ScrollLink
                                 activeClass="active"
                                 className="ScrollLink"
@@ -121,31 +127,52 @@ const HomeHeader = (props) => {
                         </div>
                     </div>
                 </div>
-                <div className="homeHeaderBox_Content__DownMenu">
+                <div className="homeHeaderBox_content__downMenu">
                     <div className="downMenuTop">
                         <div className="downMenuTop_content">
-                            <p>Zacznij pomagać !</p>
-                            <p>Oddaj niechciane rzeczy w zaufane ręce</p>
+                            <p>
+                                Zacznij pomagać !
+                            </p>
+                            <p>
+                                Oddaj niechciane rzeczy w zaufane ręce
+                            </p>
                         </div>
-                        <img src={Decoration} alt="Decoration sign"/>
+                        <img
+                            src={Decoration}
+                            alt="Decoration sign"
+                        />
                     </div>
                     <div className="downMenuDown">
-                        <div className="downMenuDown_Box">
-                            <Link className="Link" to={props.email ? '/oddaj-rzeczy' : '/logowanie'}>
-                                <p>oddaj</p>
-                                <p>rzeczy</p>
+                        <div className="downMenuDown_box">
+                            <Link
+                                className="Link"
+                                to={props.email ? '/oddaj-rzeczy' : '/logowanie'}
+                            >
+                                <p>
+                                    oddaj
+                                </p>
+                                <p>
+                                    rzeczy
+                                </p>
                             </Link>
                         </div>
-                        <div className="downMenuDown_Box">
-                            <Link className="Link" to="/">
-                                <p>zorganizuj</p>
-                                <p>zbiórkę</p>
+                        <div className="downMenuDown_box">
+                            <Link
+                                className="Link"
+                                to="/"
+                            >
+                                <p>
+                                    zorganizuj
+                                </p>
+                                <p>
+                                    zbiórkę
+                                </p>
                             </Link>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
     );
 };
 

@@ -6,26 +6,26 @@
   height: 963px;
   display: flex;
 
-  &_Image {
+  &_image {
     width: 885px;
     background-position: -483px;
   }
 
-  &_Content {
+  &_content {
     width: 873px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
 
-    &__UpMenu {
+    &__upMenu {
       width: 683px;
       height: 95px;
       margin-top: 37px;
       margin-left: 190px;
     }
 
-    &__DownMenu {
+    &__downMenu {
       width: 674px;
       height: 350px;
       margin-right: 133px;
@@ -42,7 +42,7 @@
   margin-left: 510px;
   display: flex;
 
-  &_Box1 {
+  &_box1 {
     width: 68px;
     height: 36px;
     font-size: 14px;
@@ -58,7 +58,7 @@
     }
   }
 
-  &_Box2 {
+  &_box2 {
     width: 90px;
     height: 36px;
     font-size: 13px;
@@ -82,14 +82,14 @@
   display: flex;
   align-items: center;
 
-  &_Email {
+  &_email {
     font-size: 14px;
     line-height: 19px;
     color: #000;
     margin-right: 10px;
   }
 
-  &_Box1 {
+  &_box1 {
     width: 90px;
     height: 100%;
     display: flex;
@@ -100,7 +100,7 @@
     border: 1px solid $hover-color;
   }
 
-  &_Box2 {
+  &_box2 {
     width: 90px;
     height: 100%;
     display: flex;
@@ -119,7 +119,7 @@
   display: flex;
   align-items: center;
 
-  &_Box {
+  &_box {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -162,7 +162,7 @@
   justify-content: space-between;
   align-items: flex-end;
 
-  &_Box {
+  &_box {
     display: flex;
     justify-content: center;
     align-items: center;

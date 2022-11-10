@@ -1,24 +1,33 @@
 import { Link } from "react-router-dom";
-import Decoration from "../assets/Decoration.svg"
-import Icon1 from "../assets/Icon-1.svg"
-import Icon2 from "../assets/Icon-2.svg"
-import Icon3 from "../assets/Icon-3.svg"
-import Icon4 from "../assets/Icon-4.svg"
+import Decoration from "../assets/Decoration.svg";
+import Icon1 from "../assets/Icon-1.svg";
+import Icon2 from "../assets/Icon-2.svg";
+import Icon3 from "../assets/Icon-3.svg";
+import Icon4 from "../assets/Icon-4.svg";
 
 const HomeSimpleSteps = (props) => {
     return (
-        <div id="HomeSimpleSteps" className="homeSimpleStepsBox">
+        <section
+            id="HomeSimpleSteps"
+            className="homeSimpleStepsBox"
+        >
             <div className="homeSimpleStepsBox_title">
                 <div className="homeSimpleStepsBox_title__content">
                     <p>
                         Wystarczą 4 proste kroki
                     </p>
                 </div>
-                <img src={Decoration} alt="decoration sign"/>
+                <img
+                    src={Decoration}
+                    alt="decoration sign"
+                />
             </div>
             <div className="homeSimpleStepsBox_instruction">
                 <div className="homeSimpleStepsBox_instruction__step1">
-                    <img src={Icon1} alt="icon1"/>
+                    <img
+                        src={Icon1}
+                        alt="icon1"
+                    />
                     <div className="step1_title">
                         <p>
                             Wybierz rzeczy
@@ -34,7 +43,10 @@ const HomeSimpleSteps = (props) => {
                     </div>
                 </div>
                 <div className="homeSimpleStepsBox_instruction__step2">
-                    <img src={Icon2} alt="icon2"/>
+                    <img
+                        src={Icon2}
+                        alt="icon2"
+                    />
                     <div className="step2_title">
                         <p>
                             Spakuj je
@@ -50,7 +62,10 @@ const HomeSimpleSteps = (props) => {
                     </div>
                 </div>
                 <div className="homeSimpleStepsBox_instruction__step3">
-                    <img src={Icon3} alt="icon3" />
+                    <img
+                        src={Icon3}
+                        alt="icon3"
+                    />
                     <div className="step3_title">
                         <p>
                             Zdecyduj komu
@@ -66,7 +81,10 @@ const HomeSimpleSteps = (props) => {
                     </div>
                 </div>
                 <div className="homeSimpleStepsBox_instruction__step4">
-                    <img src={Icon4} alt="icon4" />
+                    <img
+                        src={Icon4}
+                        alt="icon4"
+                    />
                     <div className="step4_title">
                         <p>
                             Zamów kuriera
@@ -83,7 +101,10 @@ const HomeSimpleSteps = (props) => {
                 </div>
             </div>
             <div className="homeSimpleStepsBox_button">
-                <Link className="Link" to={props.email ? '/oddaj-rzeczy' : '/logowanie'}>
+                <Link
+                    className="Link"
+                    to={props.email ? '/oddaj-rzeczy' : '/logowanie'}
+                >
                     <p>
                         oddaj
                     </p>
@@ -92,7 +113,7 @@ const HomeSimpleSteps = (props) => {
                     </p>
                 </Link>
             </div>
-        </div>
+        </section>
     );
 };
 

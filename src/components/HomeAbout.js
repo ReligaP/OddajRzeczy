@@ -4,7 +4,10 @@ import Image from "../assets/People.jpg";
 
 const HomeAbout = () => {
     return (
-        <div id="HomeAbout" className="homeAboutBox">
+        <section
+            id="HomeAbout"
+            className="homeAboutBox"
+        >
             <div className="homeAboutBox_content">
                 <p className="homeAboutBox_content__title">
                     O nas
@@ -32,7 +35,7 @@ const HomeAbout = () => {
                 style={{backgroundImage:`url(${Image})`}}
             >
             </div>
-        </div>
+        </section>
     );
 };
 

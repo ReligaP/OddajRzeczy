@@ -27,7 +27,6 @@ const ContactForm = () => {
     } = useForm({
         resolver: yupResolver(SignupSchema)
     });
-
     const submitHandler = () => {
         const db = getFirestore(app);
         const docRef = addDoc(collection(db, `/contact`), {
@@ -38,10 +37,10 @@ const ContactForm = () => {
         if (docRef) {
             setSuccess(true);
         }
-    }
+    };
 
     return (
-        <>
+        <section>
             {success ?
                 <div className="successBox">
                     <p className="successBox_content">
@@ -103,7 +102,7 @@ const ContactForm = () => {
                     Wyślij
                 </button>
             </form>
-        </>
+        </section>
     );
 };
 

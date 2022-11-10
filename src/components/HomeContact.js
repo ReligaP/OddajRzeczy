@@ -2,11 +2,11 @@ import ContactForm from "../components/ContactForm";
 import BackgroundContact from "../assets/Background-Contact-Form.jpg";
 import Decoration from "../assets/Decoration.svg";
 import Facebook from "../assets/Facebook.svg";
-import Instagram from "../assets/Instagram.svg"
+import Instagram from "../assets/Instagram.svg";
 
 const HomeContact= () => {
     return (
-        <div
+        <footer
             id="HomeContact"
             className="homeContactBox"
         >
@@ -43,7 +43,7 @@ const HomeContact= () => {
                     />
                 </div>
             </div>
-        </div>
+        </footer>
     );
 };
 
