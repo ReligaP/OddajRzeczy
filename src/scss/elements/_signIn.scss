@@ -1,7 +1,7 @@
 @import "src/scss/settings/fonts";
 @import "src/scss/settings/colors";
 
-.signInBox {
+.authBox {
   width: 1858px;
   height: 946px;
   display: flex;
@@ -136,13 +136,13 @@
   }
 }
 
-.Link_downMenu {
+.link_downMenu {
   cursor: pointer;
   color: $text-color;
   text-decoration: none;
 }
 
-.LinkButton {
+.linkButton {
   cursor: pointer;
   color: #000000;
   text-decoration: none;
@@ -163,7 +163,7 @@
     font-size: 16px;
     line-height: 22px;
     font-weight: 600;
-    color:$text-color
+    color:$text-color;
   }
 
   &__field {

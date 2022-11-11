@@ -1,11 +1,11 @@
 import { Link } from "react-router-dom";
-import Decoration from "../assets/Decoration.svg"
+import Decoration from "../assets/Decoration.svg";
 
 const SignOut = () => {
     return (
-        <div className="signOutBox">
-            <div className="signOutBox_navMenu">
-                    <div className="signOutBox_navMenu__upMenu">
+        <main className="authBox signOutAuthBox">
+            <header className="authBox_navMenu">
+                    <nav className="authBox_navMenu__upMenu">
                         <div className="upMenuBox1">
                             <Link
                                 className="Link"
@@ -22,10 +22,10 @@ const SignOut = () => {
                                 Załóż konto
                             </Link>
                         </div>
-                    </div>
-                    <div className="signOutBox_navMenu__downMenu">
+                    </nav>
+                    <nav className="authBox_navMenu__downMenu">
                         <Link
-                            className="Link_downMenu"
+                            className="link_downMenu"
                             to="/"
                         >
                             Start
@@ -42,25 +42,28 @@ const SignOut = () => {
                         <p>
                             Kontakt
                         </p>
-                    </div>
-                </div>
-            <div className="signOutBox_title">
-                <div className="signOutBox_title__text">
+                    </nav>
+            </header>
+            <section className="authBox_title signOutAuthBox_title">
+                <div className="authBox_title__text signOutAuthBox_title__text">
                     Wylogowanie nastąpiło pomyślnie!
                 </div>
                 <div>
-                    <img src={Decoration} alt="Decoration-Sign"/>
+                    <img
+                        src={Decoration}
+                        alt="Decoration-Sign"
+                    />
                 </div>
-            </div>
-            <div className="signOutBox_button">
+            </section>
+            <nav className="signOutAuthBox_button">
                 <Link
-                    className="LinkButton"
+                    className="linkButton"
                     to="/"
                 >
                     Strona główna
                 </Link>
-            </div>
-        </div>
+            </nav>
+        </main>
     );
 };
 

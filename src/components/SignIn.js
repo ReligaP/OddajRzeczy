@@ -47,9 +47,9 @@ const SignIn = () => {
     return (
         <>
             <BrowserView>
-                <div className="signInBox">
-                    <div className="signInBox_navMenu">
-                        <div className="signInBox_navMenu__upMenu">
+                <main className="authBox">
+                    <header className="authBox_navMenu">
+                        <nav className="authBox_navMenu__upMenu">
                             <div className="upMenuBox1">
                                 Zaloguj
                             </div>
@@ -61,10 +61,10 @@ const SignIn = () => {
                                     Załóż konto
                                 </Link>
                             </div>
-                        </div>
-                        <div className="signInBox_navMenu__downMenu">
+                        </nav>
+                        <nav className="authBox_navMenu__downMenu">
                             <Link
-                                className="Link_downMenu"
+                                className="link_downMenu"
                                 to="/"
                             >
                                 Start
@@ -81,18 +81,24 @@ const SignIn = () => {
                             <p>
                                 Kontakt
                             </p>
-                        </div>
-                    </div>
-                    <div className="signInBox_title">
-                        <div className="signInBox_title__text">
+                        </nav>
+                    </header>
+                    <section className="authBox_title">
+                        <div className="authBox_title__text">
                             Zaloguj się
                         </div>
                         <div>
-                            <img src={Decoration} alt="Decoration-Sign"/>
+                            <img
+                                src={Decoration}
+                                alt="Decoration-Sign"
+                            />
                         </div>
-                    </div>
-                    <form className="signInBox_login" onSubmit={handleSubmit(submitHandler)}>
-                        <div className="signInBox_login__loginBox">
+                    </section>
+                    <form
+                        className="authBox_login"
+                        onSubmit={handleSubmit(submitHandler)}
+                    >
+                        <div className="authBox_login__loginBox">
                             <div className="loginBox_input">
                                 <label className="loginBox_input__label">
                                     Email
@@ -102,7 +108,9 @@ const SignIn = () => {
                                     type="email"
                                     {...register("email")}
                                 />
-                                <p className="registerError">{errors.email?.message}</p>
+                                <p className="registerError">
+                                    {errors.email?.message}
+                                </p>
                             </div>
                             <div className="loginBox_input">
                                 <label className="loginBox_input__label">
@@ -113,24 +121,32 @@ const SignIn = () => {
                                     type="password"
                                     {...register("password")}
                                 />
-                                <p className="registerError">{errors.password?.message}</p>
+                                <p className="registerError">
+                                    {errors.password?.message}
+                                </p>
                                 {
                                     Boolean(error) && <p className="invalidEmail"> Nieprawidłowy login bądź hasło</p>
                                 }
                             </div>
                         </div>
-                        <div className="signInBox_login__loginButtons">
+                        <div className="authBox_login__loginButtons">
                             <div className="loginButton">
-                                <Link className="LinkButton" to="/rejestracja">
+                                <Link
+                                    className="linkButton"
+                                    to="/rejestracja"
+                                >
                                     Załóż konto
                                 </Link>
                             </div>
-                            <button className="loginSubmit" type="submit">
+                            <button
+                                className="loginSubmit"
+                                type="submit"
+                            >
                                 Zaloguj się
                             </button>
                         </div>
                     </form>
-                </div>
+                </main>
             </BrowserView>
             <MobileView>
                 <MobileHeader />

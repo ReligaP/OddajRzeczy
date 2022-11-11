@@ -1,90 +1,23 @@
 @import "src/scss/settings/fonts";
 @import "src/scss/settings/colors";
 
-.registerBox {
-  width: 1858px;
-  height: 946px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-end;
 
-  &_navMenu {
-    width: 663px;
-    height: 86px;
-    margin-top: 37px;
-    margin-right: 139px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: flex-end;
+.registerAuthBox_title__text {
+  width: 208px;
+}
 
-    &__upMenu {
-      width: 158px;
-      height: 36px;
-      display: flex;
-    }
+.registerAuthBox_login {
+  width: 498.79px;
+  height: 418px;
 
-    &__downMenu {
-      width: 663px;
-      height: 24px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      color: $text-color;
-      font-size: 18px;
-      line-height: 24px;
-    }
+  &__loginBox {
+    width: 384px;
+    height: 328px;
   }
 
-  &_title {
-    width: 253px;
-    height: 113px;
-    margin-right: 802.5px;
-    margin-top: 123px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-
-    &__text {
-      width: 208px;
-      height: 55px;
-      font-size: 40px;
-      line-height: 55px;
-      letter-spacing: -0.8px;
-      color: $text-color;
-      font-family: $font-base;
-    }
-  }
-
-  &_login {
-      width: 498.79px;
-      height: 418px;
-      margin-right: 671px;
-      margin-top: 60px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: space-between;
-
-    &__loginBox {
-      width: 384px;
-      height: 328px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      background-color: #F0F1F1;
-    }
-
-    &__loginButtons {
-      width: 498.79px;
-      height: 50px;
-      margin-top: 40px;
-      display: flex;
-      justify-content: space-between;
-    }
+  &__loginButtons {
+    margin-top: 40px;
+    width: 498.79px;
   }
 }
 

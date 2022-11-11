@@ -23,7 +23,7 @@ const RegisterSchema = yup.object().shape({
 });
 
 const Register = () => {
-    const [invalidEmail,setInvalidEmail] = useState("")
+    const [invalidEmail,setInvalidEmail] = useState("");
     let navigate = useNavigate();
     const {
         register,
@@ -57,9 +57,9 @@ const Register = () => {
     return (
         <>
             <BrowserView>
-                <div className="registerBox">
-                    <div className="registerBox_navMenu">
-                        <div className="registerBox_navMenu__upMenu">
+                <main className="authBox">
+                    <header className="authBox_navMenu">
+                        <nav className="authBox_navMenu__upMenu">
                             <div className="upMenuBox1">
                                 <Link
                                     className="Link"
@@ -71,10 +71,10 @@ const Register = () => {
                             <div className="upMenuBox2">
                                 Załóż konto
                             </div>
-                        </div>
-                        <div className="registerBox_navMenu__downMenu">
+                        </nav>
+                        <nav className="authBox_navMenu__downMenu">
                             <Link
-                                className="Link_downMenu"
+                                className="link_downMenu"
                                 to="/"
                             >
                                 Start
@@ -91,21 +91,24 @@ const Register = () => {
                             <p>
                                 Kontakt
                             </p>
-                        </div>
-                    </div>
-                    <div className="registerBox_title">
-                        <div className="registerBox_title__text">
+                        </nav>
+                    </header>
+                    <section className="authBox_title">
+                        <div className="authBox_title__text registerAuthBox_title__text">
                             Załóż konto
                         </div>
                         <div>
-                            <img src={Decoration} alt="Decoration-Sign"/>
+                            <img
+                                src={Decoration}
+                                alt="Decoration-Sign"
+                            />
                         </div>
-                    </div>
+                    </section>
                     <form
-                        className="registerBox_login"
+                        className="authBox_login registerAuthBox_login"
                         onSubmit={handleSubmit(submitHandler)}
                     >
-                        <div className="registerBox_login__loginBox">
+                        <div className="authBox_login__loginBox registerAuthBox_login__loginBox">
                             <div className="loginBox_input">
                                 <label className="loginBox_input__label">
                                     Email
@@ -115,7 +118,9 @@ const Register = () => {
                                     type="email"
                                     {...register("email")}
                                 />
-                                <p className="registerError">{errors.email?.message}</p>
+                                <p className="registerError">
+                                    {errors.email?.message}
+                                </p>
                                 {
                                     Boolean(invalidEmail) && <p className="invalidEmail">Adres email zajęty</p>
                                 }
@@ -129,7 +134,9 @@ const Register = () => {
                                     type="password"
                                     {...register("password")}
                                 />
-                                <p className="registerError">{errors.password?.message}</p>
+                                <p className="registerError">
+                                    {errors.password?.message}
+                                </p>
                             </div>
                             <div className="loginBox_input">
                                 <label className="loginBox_input__label">
@@ -140,12 +147,17 @@ const Register = () => {
                                     type="password"
                                     {...register("confirmPassword")}
                                 />
-                                <p className="registerError">{errors.confirmPassword?.message}</p>
+                                <p className="registerError">
+                                    {errors.confirmPassword?.message}
+                                </p>
                             </div>
                         </div>
-                        <div className="registerBox_login__loginButtons">
+                        <div className="authBox_login__loginButtons registerAuthBox_login__loginButtons">
                             <div className="loginButton">
-                                <Link className="LinkButton" to="/logowanie">
+                                <Link
+                                    className="linkButton"
+                                    to="/logowanie"
+                                >
                                     Zaloguj się
                                 </Link>
                             </div>
@@ -157,7 +169,7 @@ const Register = () => {
                             </button>
                         </div>
                     </form>
-                </div>
+                </main>
             </BrowserView>
             <MobileView>
                 <MobileHeader />
