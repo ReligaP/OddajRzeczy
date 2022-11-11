@@ -6,8 +6,8 @@ const FormThanks = () => {
     return (
         <>
             <BrowserView>
-                <div className="thanksBox">
-                    <div className="thanksBox_content">
+                <section className="thanksBox">
+                    <section className="thanksBox_content">
                         <p className="thanksBox_content__text">
                             Dziękujemy za przesłanie formularza
                         </p>
@@ -17,12 +17,12 @@ const FormThanks = () => {
                         <p className="thanksBox_content__text">
                             informacje o odbiorze.
                         </p>
-                    </div>
+                    </section>
                     <img
                         src={Decoration}
                         alt="Decoration-Sign"
                     />
-                </div>
+                </section>
             </BrowserView>
             <MobileView>
                 <section>

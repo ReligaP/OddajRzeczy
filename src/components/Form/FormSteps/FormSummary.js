@@ -38,13 +38,13 @@ const FormSummary = ({ data }) => {
     return (
         <>
             <BrowserView>
-                <div className="summaryBox">
-                    <div className="text">
+                <section className="summaryBox">
+                    <header className="text">
                         <p className="text_content">
                             Podsumowanie Twojej darowizny
                         </p>
-                    </div>
-                    <div className="summaryBox_content">
+                    </header>
+                    <section className="summaryBox_content">
                         <div className="contentUpBox">
                             <p className="contentUpBox_title">
                                 Oddajesz:
@@ -138,8 +138,8 @@ const FormSummary = ({ data }) => {
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
+                    </section>
+                </section>
             </BrowserView>
             <MobileView>
                 <section>

@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
-import { getAuth, signOut } from "firebase/auth";
+import { getAuth , signOut } from "firebase/auth";
 import app from "../../firebase/firebaseconfig";
 import BackgroundImage from "../../assets/Form-Hero-Image.jpg";
-import Decoration from "../../assets/Decoration.svg"
+import Decoration from "../../assets/Decoration.svg";
 
 const FormHeader = (props) => {
     const ClickHandler = () => {
@@ -14,44 +14,43 @@ const FormHeader = (props) => {
             const errorMessage = error.message;
             console.log(errorCode, errorMessage);
         })
-    }
-
+    };
     return (
-        <div className="formBox">
+        <header className="formBox">
             <div
                 className="formBox_image"
                 style={{backgroundImage:`url(${BackgroundImage})`}}
             >
             </div>
             <div className="formBox_content">
-                <div className="formBox_content__navMenu">
+                <nav className="formBox_content__navMenu">
                     <div className="upMenuTopLogged">
-                        <p className="upMenuTopLogged_Email">
+                        <p className="upMenuTopLogged_email">
                             Cześć {props.email} !
                         </p>
-                        <div className="upMenuTopLogged_Box1">
+                        <div className="upMenuTopLogged_box1">
                             <Link
-                                className="LinkButton"
+                                className="linkButton"
                                 to="/oddaj-rzeczy"
                             >
                                 Oddaj rzeczy
                             </Link>
                         </div>
                         <div
-                            className="upMenuTopLogged_Box2"
+                            className="upMenuTopLogged_box2"
                         >
                             <Link
                                 onClick={ClickHandler}
-                                className="LinkButton"
+                                className="linkButton"
                                 to="/wylogowano"
                             >
                                 Wyloguj
                             </Link>
                         </div>
                     </div>
-                    <div className="signInBox_navMenu__downMenu">
+                    <div className="authBox_navMenu__downMenu">
                         <Link
-                            className="Link_downMenu"
+                            className="link_downMenu"
                             to="/"
                         >
                             Start
@@ -69,15 +68,24 @@ const FormHeader = (props) => {
                             Kontakt
                         </p>
                     </div>
-                </div>
+                </nav>
                 <div className="formBox_content__box">
                     <div className="box_title">
-                        <p>Oddaj rzeczy, których już nie chcesz</p>
-                        <p>POTRZEBUJĄCYM</p>
+                        <p>
+                            Oddaj rzeczy, których już nie chcesz
+                        </p>
+                        <p>
+                            POTRZEBUJĄCYM
+                        </p>
                     </div>
-                    <img src={Decoration} alt="Decoration-Sign"/>
+                    <img
+                        src={Decoration}
+                        alt="Decoration-Sign"
+                    />
                     <div className="box_steps">
-                        <p>Wystarczą 4 proste kroki:</p>
+                        <p>
+                            Wystarczą 4 proste kroki:
+                        </p>
                     </div>
                     <div className="box_items">
                         <div className="box_items__box" />
@@ -87,7 +95,7 @@ const FormHeader = (props) => {
                     </div>
                 </div>
             </div>
-        </div>
+        </header>
     );
 };
 

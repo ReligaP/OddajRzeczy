@@ -94,19 +94,19 @@ const FormStep1 = ({ update }) => {
     return (
         <>
             <BrowserView>
-                <div className="step1Box">
-                    <div className="step">
+                <section className="step1Box">
+                    <header className="step">
                         <p className="step_content">
                             Krok 1/4
                         </p>
-                    </div>
-                    <div className="text">
+                    </header>
+                    <section className="text">
                         <p className="text_content">
                             Zaznacz co chcesz oddać:
                         </p>
-                    </div>
-                    <div className="step1Box_content">
-                        <div className="step1Box_content__box">
+                    </section>
+                    <section className="step1Box_content">
+                        <form className="step1Box_content__box">
                             <label className="container">
                                 <span className="container_text">
                                     ubrania, które nadają się do ponownego użycia
@@ -121,9 +121,9 @@ const FormStep1 = ({ update }) => {
                                 <span className="checkmark" />
                             </label>
                             <label className="container">
-                        <span className="container_text">
-                            ubrania, do wyrzucenia
-                        </span>
+                                <span className="container_text">
+                                    ubrania, do wyrzucenia
+                                </span>
                                 <input
                                     type="radio"
                                     name="radio"
@@ -133,9 +133,9 @@ const FormStep1 = ({ update }) => {
                                 <span className="checkmark" />
                             </label>
                             <label className="container">
-                        <span className="container_text">
-                            zabawki
-                        </span>
+                                <span className="container_text">
+                                    zabawki
+                                </span>
                                 <input
                                     type="radio"
                                     name="radio"
@@ -145,9 +145,9 @@ const FormStep1 = ({ update }) => {
                                 <span className="checkmark" />
                             </label>
                             <label className="container">
-                        <span className="container_text">
-                            książki
-                        </span>
+                                <span className="container_text">
+                                    książki
+                                </span>
                                 <input
                                     type="radio"
                                     name="radio"
@@ -157,9 +157,9 @@ const FormStep1 = ({ update }) => {
                                 <span className="checkmark" />
                             </label>
                             <label className="container">
-                        <span className="container_text">
-                            Inne
-                        </span>
+                                <span className="container_text">
+                                    Inne
+                                </span>
                                 <input
                                     type="radio"
                                     name="radio"
@@ -168,9 +168,9 @@ const FormStep1 = ({ update }) => {
                                 />
                                 <span className="checkmark" />
                             </label>
-                        </div>
-                    </div>
-                </div>
+                        </form>
+                    </section>
+                </section>
             </BrowserView>
             <MobileView>
                 <section>

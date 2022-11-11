@@ -33,18 +33,18 @@ const FormStep2 = ({ update }) => {
     return (
         <>
             <BrowserView>
-                <div className="step2Box">
-                    <div className="step">
+                <section className="step2Box">
+                    <header className="step">
                         <p className="step_content">
                             Krok 2/4
                         </p>
-                    </div>
-                    <div className="text">
+                    </header>
+                    <section className="text">
                         <p className="text_content">
                             Podaj liczbę 60l worków, w które spakowałeś/aś rzeczy:
                         </p>
-                    </div>
-                    <div className="step2Box_content">
+                    </section>
+                    <form className="step2Box_content">
                         <p className="step2Box_content__text">
                             Liczba 60l worków:
                         </p>
@@ -68,8 +68,8 @@ const FormStep2 = ({ update }) => {
                                 <MenuItem value={5}>5</MenuItem>
                             </Select>
                         </FormControl>
-                    </div>
-                </div>
+                    </form>
+                </section>
             </BrowserView>
             <MobileView>
                 <section>

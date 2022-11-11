@@ -48,24 +48,44 @@ const FormSelect = ( props ) => {
     return (
         <>
             <BrowserView>
-                <div className="formSelectBox">
-                    {page === 1 && <FormStepHeader1 />}
-                    {page === 2 && <FormStepHeader2 />}
-                    {page === 3 && <FormStepHeader3 />}
-                    {page === 4 && <FormStepHeader4 />}
+                <main className="formSelectBox">
+                    {
+                        page === 1 && <FormStepHeader1 />
+                    }
+                    {
+                        page === 2 && <FormStepHeader2 />
+                    }
+                    {
+                        page === 3 && <FormStepHeader3 />
+                    }
+                    {
+                        page === 4 && <FormStepHeader4 />
+                    }
                     <div
                         className="formSelectBox_content"
                         style={{backgroundImage:`url(${Background}`}}
                     >
                         <div>
-                            {page === 1 && <FormStep1 update={updateData} />}
-                            {page === 2 && <FormStep2 update={updateData} />}
-                            {page === 3 && <FormStep3 update={updateData} />}
-                            {page === 4 && <FormStep4 update={updateData} />}
-                            {page === 5 && <FormSummary data={data} />}
-                            {page === 6 && <FormThanks />}
+                            {
+                                page === 1 && <FormStep1 update={updateData} />
+                            }
+                            {
+                                page === 2 && <FormStep2 update={updateData} />
+                            }
+                            {
+                                page === 3 && <FormStep3 update={updateData} />
+                            }
+                            {
+                                page === 4 && <FormStep4 update={updateData} />
+                            }
+                            {
+                                page === 5 && <FormSummary data={data} />
+                            }
+                            {
+                                page === 6 && <FormThanks />
+                            }
                         </div>
-                        <div className="formSelectBox_content__buttons">
+                        <section className="formSelectBox_content__buttons">
                             {
                                 (page !== 1 && page <= 5)
                                 &&
@@ -96,9 +116,9 @@ const FormSelect = ( props ) => {
                                     Potwierdzam
                                 </button>
                             }
-                        </div>
+                        </section>
                     </div>
-                </div>
+                </main>
             </BrowserView>
             <MobileView>
                 <main>

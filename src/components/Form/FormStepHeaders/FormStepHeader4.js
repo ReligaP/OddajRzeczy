@@ -1,7 +1,7 @@
 
 const FormStepHeader4 = () => {
     return (
-        <div className="HeaderBox">
+        <header className="HeaderBox">
             <div className="HeaderBox_content1">
                 <p className="HeaderBox_text">
                     Ważne!
@@ -10,7 +10,7 @@ const FormStepHeader4 = () => {
                     Podaj adres oraz termin odbioru rzeczy.
                 </p>
             </div>
-        </div>
+        </header>
     );
 };
 

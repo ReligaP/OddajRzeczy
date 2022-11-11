@@ -67,18 +67,18 @@ const FormStep4 = ({ update }) => {
     return (
         <>
             <BrowserView>
-                <div className="step4Box">
-                    <div className="step">
+                <section className="step4Box">
+                    <header className="step">
                         <p className="step_content">
                             Krok 4/4
                         </p>
-                    </div>
-                    <div className="text">
+                    </header>
+                    <section className="text">
                         <p className="text_content">
                             Podaj adres oraz termin odbioru rzecz przez kuriera
                         </p>
-                    </div>
-                    <div className="step4Box_content">
+                    </section>
+                    <form className="step4Box_content">
                         <div className="step4Box_content__box1">
                             <p className="step4Box_title">
                                 Adres odbioru:
@@ -159,8 +159,8 @@ const FormStep4 = ({ update }) => {
                                 />
                             </div>
                         </div>
-                    </div>
-                </div>
+                    </form>
+                </section>
             </BrowserView>
             <MobileView>
                 <section>

@@ -1,7 +1,7 @@
 
 const FormStepHeader1 = () => {
     return (
-        <div className="HeaderBox">
+        <header className="HeaderBox">
             <div className="HeaderBox_content1">
                 <p className="HeaderBox_text" >
                     Ważne!
@@ -11,7 +11,7 @@ const FormStepHeader1 = () => {
                     Dzięki temu będziemy wiedzieć komu najlepiej je przekazać.
                 </p>
             </div>
-        </div>
+        </header>
     );
 };
 

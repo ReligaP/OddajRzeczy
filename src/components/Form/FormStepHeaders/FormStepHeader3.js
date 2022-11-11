@@ -1,7 +1,7 @@
 
 const FormStepHeader3 = () => {
     return (
-        <div className="HeaderBox">
+        <header className="HeaderBox">
             <div className="HeaderBox_content2">
                 <p className="HeaderBox_text">
                     Ważne!
@@ -11,7 +11,7 @@ const FormStepHeader3 = () => {
                     Możesz też filtrować organizacje po ich lokalizacji bądź celu ich pomocy.
                 </p>
             </div>
-        </div>
+        </header>
     );
 };
 

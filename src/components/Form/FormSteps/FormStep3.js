@@ -52,18 +52,18 @@ const FormStep3 = ({ update }) => {
     return (
         <>
             <BrowserView>
-                <div className="step3Box">
-                    <div className="step">
+                <section className="step3Box">
+                    <header className="step">
                         <p className="step_content">
                             Krok 3/4
                         </p>
-                    </div>
-                    <div className="text">
+                    </header>
+                    <section className="text">
                         <p className="text_content">
                             Lokalizacja:
                         </p>
-                    </div>
-                    <div className="step3Box_content">
+                    </section>
+                    <form className="step3Box_content">
                         <div>
                             <FormControl
                                 size="medium"
@@ -88,15 +88,15 @@ const FormStep3 = ({ update }) => {
                                 </Select>
                             </FormControl>
                         </div>
-                        <div className="content3Box" >
+                        <div className="content3Box">
                             <p className="content3Box_text">
                                 Komu chcesz pomóc?
                             </p>
                             <div className="content3Box_select">
                                 <label className="container">
-                        <span className="container_text">
-                            dzieciom
-                        </span>
+                                    <span className="container_text">
+                                        dzieciom
+                                    </span>
                                     <input
                                         type="radio"
                                         name="radio"
@@ -107,9 +107,9 @@ const FormStep3 = ({ update }) => {
                                     <span className="checkmark" />
                                 </label>
                                 <label className="container">
-                        <span className="container_text">
-                            samotnym matkom
-                        </span>
+                                    <span className="container_text">
+                                        samotnym matkom
+                                    </span>
                                     <input
                                         type="radio"
                                         name="radio"
@@ -120,9 +120,9 @@ const FormStep3 = ({ update }) => {
                                     <span className="checkmark" />
                                 </label>
                                 <label className="container">
-                        <span className="container_text">
-                            bezdomnym
-                        </span>
+                                    <span className="container_text">
+                                        bezdomnym
+                                    </span>
                                     <input
                                         type="radio"
                                         name="radio"
@@ -133,9 +133,9 @@ const FormStep3 = ({ update }) => {
                                     <span className="checkmark" />
                                 </label>
                                 <label className="container">
-                        <span className="container_text">
-                            niepełnosprawnym
-                        </span>
+                                    <span className="container_text">
+                                        niepełnosprawnym
+                                    </span>
                                     <input
                                         type="radio"
                                         name="radio"
@@ -157,8 +157,8 @@ const FormStep3 = ({ update }) => {
                                 onBlur={() => update("localization",city)}
                             />
                         </div>
-                    </div>
-                </div>
+                    </form>
+                </section>
             </BrowserView>
             <MobileView>
                 <section>

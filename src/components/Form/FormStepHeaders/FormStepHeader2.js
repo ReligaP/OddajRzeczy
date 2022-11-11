@@ -1,7 +1,7 @@
 
 const FormStepHeader2 = () => {
     return (
-        <div className="HeaderBox">
+        <header className="HeaderBox">
             <div className="HeaderBox_content2">
                 <p className="HeaderBox_text">
                     Ważne!
@@ -11,7 +11,7 @@ const FormStepHeader2 = () => {
                     jak poprawnie spakować rzeczy znajdziesz TUTAJ.
                 </p>
             </div>
-        </div>
+        </header>
     );
 };
 
