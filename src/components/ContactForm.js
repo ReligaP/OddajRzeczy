@@ -53,7 +53,10 @@ const ContactForm = () => {
                 :
                 ""
             }
-            <form className="contactBox" onSubmit={handleSubmit(submitHandler)}>
+            <form
+                className="contactBox"
+                onSubmit={handleSubmit(submitHandler)}
+            >
                 <div className="contactBox_upBox">
                     <div className="contactBox_upBox__name">
                         <label className="upBox_label">
@@ -66,7 +69,9 @@ const ContactForm = () => {
                             value={name}
                             onChange={(e) => setName(e.target.value)}
                         />
-                        <p className="upBox_error">{errors.name?.message}</p>
+                        <p className="upBox_error">
+                            {errors.name?.message}
+                        </p>
                     </div>
                     <div className="contactBox_upBox__email">
                         <label className="upBox_label">
@@ -80,7 +85,9 @@ const ContactForm = () => {
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
                         />
-                        <p className="upBox_error">{errors.email?.message}</p>
+                        <p className="upBox_error">
+                            {errors.email?.message}
+                        </p>
                     </div>
                 </div>
                 <div className="contactBox_downBox">
@@ -96,9 +103,14 @@ const ContactForm = () => {
                         {...register("text")}
                         onChange={(e) => setText(e.target.value)}
                     />
-                    <p className="upBox_error">{errors.text?.message}</p>
+                    <p className="upBox_error">
+                        {errors.text?.message}
+                    </p>
                 </div>
-                <button className="contactBox_button" type="submit">
+                <button
+                    className="contactBox_button"
+                    type="submit"
+                >
                     Wyślij
                 </button>
             </form>

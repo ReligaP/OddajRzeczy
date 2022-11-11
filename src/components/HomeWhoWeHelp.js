@@ -103,15 +103,23 @@ const HomeWhoWeHelp = () => {
                         className="homeWhoWeHelpBox_select__box"
                         onClick={handleClickOrg}
                     >
-                        <p>Organizacjom</p>
-                        <p>pozarządowym</p>
+                        <p>
+                            Organizacjom
+                        </p>
+                        <p>
+                            pozarządowym
+                        </p>
                     </div>
                     <div
                         className="homeWhoWeHelpBox_select__box"
                         onClick={handleClickLocal}
                     >
-                        <p>Lokalnym</p>
-                        <p>zbiórkom</p>
+                        <p>
+                            Lokalnym
+                        </p>
+                        <p>
+                            zbiórkom
+                        </p>
                     </div>
                 </div>
                 <div className="homeWhoWeHelpBox_content">

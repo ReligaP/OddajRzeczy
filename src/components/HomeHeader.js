@@ -17,14 +17,14 @@ const HomeHeader = (props) => {
         })
     };
     return (
-        <section className="homeHeaderBox">
+        <header className="homeHeaderBox">
             <div
                 className="homeHeaderBox_image"
                 style={{backgroundImage:`url(${HomeHeroImage})`}}
             >
             </div>
             <div className="homeHeaderBox_content">
-                <div className="homeHeaderBox_content__upMenu">
+                <nav className="homeHeaderBox_content__upMenu">
                     {
                         props.email ?
                             <div className="upMenuTopLogged">
@@ -33,7 +33,7 @@ const HomeHeader = (props) => {
                                 </p>
                                 <div className="upMenuTopLogged_box1">
                                     <Link
-                                        className="LinkButton"
+                                        className="linkButton"
                                         to="/oddaj-rzeczy"
                                     >
                                         Oddaj rzeczy
@@ -42,7 +42,7 @@ const HomeHeader = (props) => {
                                 <div className="upMenuTopLogged_box2">
                                     <Link
                                         onClick={ClickHandler}
-                                        className="LinkButton"
+                                        className="linkButton"
                                         to="/wylogowano"
                                     >
                                         Wyloguj
@@ -126,8 +126,8 @@ const HomeHeader = (props) => {
                             </ScrollLink>
                         </div>
                     </div>
-                </div>
-                <div className="homeHeaderBox_content__downMenu">
+                </nav>
+                <nav className="homeHeaderBox_content__downMenu">
                     <div className="downMenuTop">
                         <div className="downMenuTop_content">
                             <p>
@@ -170,9 +170,9 @@ const HomeHeader = (props) => {
                             </Link>
                         </div>
                     </div>
-                </div>
+                </nav>
             </div>
-        </section>
+        </header>
     );
 };
 
