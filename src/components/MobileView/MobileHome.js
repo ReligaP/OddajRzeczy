@@ -52,7 +52,7 @@ const MobileHome = (props) => {
                                     </p>
                                     <Link
                                         className="mobileHomeBox_greetingSectionLink mobileHomeBox_greetingDonationLink"
-                                        to="/darowizny"
+                                        to="/"
                                     >
                                         <p>
                                             Moje darowizny

@@ -45,7 +45,7 @@ const MobileFormButtons = (props) => {
                 &&
                 <Link
                     className="mobileFormButtonLink mobileFormButton mobileThanksButton"
-                    to="/darowizny"
+                    to="/"
                 >
                     Twoje darowizny
                 </Link>

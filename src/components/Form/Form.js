@@ -32,7 +32,7 @@ const Form = () => {
             </BrowserView>
             <MobileView>
                 <MobileHeader email={email} />
-                <FormSelect />
+                <FormSelect email={email} />
                 <MobileFooter />
             </MobileView>
         </>
