@@ -5,7 +5,7 @@ import Icon2 from "../assets/Icon-2.svg";
 import Icon3 from "../assets/Icon-3.svg";
 import Icon4 from "../assets/Icon-4.svg";
 
-const HomeSimpleSteps = (props) => {
+const HomeSimpleSteps = ( props ) => {
     return (
         <section
             id="HomeSimpleSteps"
@@ -103,7 +103,7 @@ const HomeSimpleSteps = (props) => {
             <div className="homeSimpleStepsBox_button">
                 <Link
                     className="Link"
-                    to={props.email ? '/oddaj-rzeczy' : '/logowanie'}
+                    to={ props.user ? '/oddaj-rzeczy' : '/logowanie'}
                 >
                     <p>
                         oddaj

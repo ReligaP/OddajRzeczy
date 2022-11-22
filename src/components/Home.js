@@ -1,6 +1,6 @@
-import { useEffect , useState } from 'react';
-import { getAuth , onAuthStateChanged } from "firebase/auth";
 import { BrowserView , MobileView } from 'react-device-detect';
+import { getAuth , signOut } from "firebase/auth";
+import { useSelector } from "react-redux";
 import HomeHeader from "./HomeHeader";
 import HomeThreeColumns from "./HomeThreeColumns";
 import HomeSimpleSteps from "./HomeSimpleSteps";
@@ -12,35 +12,31 @@ import MobileFooter from "./MobileView/MobileFooter";
 import MobileHome from "./MobileView/MobileHome";
 import app from "../firebase/firebaseconfig";
 
-
 const Home = () => {
-    const [email, setEmail] = useState("");
-    useEffect(() => {
-        const auth = getAuth(app);
-        onAuthStateChanged(auth, (user) => {
-            if (user) {
-                console.log(user.email);
-                setEmail(user.email);
-            }
-            else {
-                console.log("Użytkownik wylogowany")
-                setEmail("");
-            }
-        });
-    }, []);
+    const user = useSelector((state) => state.auth.value);
+    const ClickHandlerSignOut = () => {
+        const auth=getAuth(app);
+        signOut(auth).then(() => {
+            console.log("Wylogowany");
+        }).catch((error) => {
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            console.log(errorCode, errorMessage);
+        })
+    };
     return (
         <>
             <BrowserView>
-                <HomeHeader email={email}/>
+                <HomeHeader user={user} signOut={ClickHandlerSignOut}/>
                 <HomeThreeColumns />
-                <HomeSimpleSteps email={email}/>
+                <HomeSimpleSteps user={user} />
                 <HomeAbout />
                 <HomeWhoWeHelp />
                 <HomeContact />
             </BrowserView>
             <MobileView>
-                <MobileHeader email={email}/>
-                <MobileHome email={email}/>
+                <MobileHeader user={user} />
+                <MobileHome user={user}/>
                 <MobileFooter />
             </MobileView>
         </>

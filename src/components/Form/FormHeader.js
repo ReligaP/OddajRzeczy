@@ -1,20 +1,8 @@
 import { Link } from "react-router-dom";
-import { getAuth , signOut } from "firebase/auth";
-import app from "../../firebase/firebaseconfig";
 import BackgroundImage from "../../assets/Form-Hero-Image.jpg";
 import Decoration from "../../assets/Decoration.svg";
 
 const FormHeader = (props) => {
-    const ClickHandler = () => {
-        const auth=getAuth(app);
-        signOut(auth).then(() => {
-            console.log("Wylogowany");
-        }).catch((error) => {
-            const errorCode = error.code;
-            const errorMessage = error.message;
-            console.log(errorCode, errorMessage);
-        })
-    };
     return (
         <header className="formBox">
             <div
@@ -26,7 +14,7 @@ const FormHeader = (props) => {
                 <nav className="formBox_content__navMenu">
                     <div className="upMenuTopLogged">
                         <p className="upMenuTopLogged_email">
-                            Cześć {props.email} !
+                            Cześć {props.user} !
                         </p>
                         <div className="upMenuTopLogged_box1">
                             <Link
@@ -40,7 +28,7 @@ const FormHeader = (props) => {
                             className="upMenuTopLogged_box2"
                         >
                             <Link
-                                onClick={ClickHandler}
+                                onClick={props.signOut}
                                 className="linkButton"
                                 to="/wylogowano"
                             >

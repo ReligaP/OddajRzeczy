@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { BrowserView , MobileView } from "react-device-detect";
-import { addDoc, collection , getFirestore } from "firebase/firestore";
+import { addDoc , collection , getFirestore } from "firebase/firestore";
 import FormStep1 from "./FormSteps/FormStep1";
 import FormStep2 from "./FormSteps/FormStep2";
 import FormStep3 from "./FormSteps/FormStep3";
@@ -38,7 +38,7 @@ const FormSelect = ( props ) => {
     const confirm = async (e) => {
         e.preventDefault();
         const db = getFirestore(app);
-        const docRef = await addDoc(collection(db, `/${props.email}/`), {
+        const docRef = await addDoc(collection(db, `/${props.user}/`), {
             data,
         });
         if (docRef) {

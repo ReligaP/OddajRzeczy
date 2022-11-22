@@ -5,7 +5,7 @@ import PanToolAltIcon from '@mui/icons-material/PanToolAlt';
 import LocalShippingIcon from '@mui/icons-material/LocalShipping';
 import VerifiedIcon from '@mui/icons-material/Verified';
 
-const MobileHome = (props) => {
+const MobileHome = ( props ) => {
     return (
         <main>
             <div className="mobileHomeBox">
@@ -31,11 +31,11 @@ const MobileHome = (props) => {
                             </p>
                         </div>
                         {
-                            props.email ?
+                            props.user ?
                                 <nav className="mobileHomeBox_greetingSectionLogged">
                                     <div className="mobileHomeBox_greetingSectionLogged__loginBar">
                                         <p className="mobileHomeBox_greetingSectionText">
-                                            Witaj , {props.email} !
+                                            Witaj , {props.user} !
                                         </p>
                                         <VerifiedIcon fontSize="large" sx={{color:"green",marginLeft:"10px"}} />
                                     </div>

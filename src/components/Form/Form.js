@@ -1,6 +1,6 @@
-import { useEffect , useState } from "react";
-import { getAuth , onAuthStateChanged }  from "firebase/auth";
 import { BrowserView , MobileView } from "react-device-detect";
+import { useSelector } from "react-redux";
+import { getAuth , signOut } from "firebase/auth";
 import FormHeader from "./FormHeader";
 import HomeContact from "../HomeContact";
 import FormSelect from "./FormSelect";
@@ -8,31 +8,29 @@ import MobileHeader from "../MobileView/MobileHeader";
 import MobileFooter from "../MobileView/MobileFooter";
 import app from "../../firebase/firebaseconfig";
 
+
 const Form = () => {
-    const [email, setEmail] = useState("");
-    useEffect(() => {
-        const auth = getAuth(app);
-        onAuthStateChanged(auth, (user) => {
-            if (user) {
-                console.log(user.email);
-                setEmail(user.email);
-            }
-            else {
-                console.log("Użytkownik wylogowany")
-                setEmail("");
-            }
-        });
-    }, []);
+    const user = useSelector((state) => state.auth.value);
+    const ClickHandlerSignOut = () => {
+        const auth=getAuth(app);
+        signOut(auth).then(() => {
+            console.log("Wylogowany");
+        }).catch((error) => {
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            console.log(errorCode, errorMessage);
+        })
+    };
     return (
         <>
             <BrowserView>
-                <FormHeader email={email}/>
-                <FormSelect email={email}/>
+                <FormHeader user={user} signOut={ClickHandlerSignOut}/>
+                <FormSelect user={user}/>
                 <HomeContact />
             </BrowserView>
             <MobileView>
-                <MobileHeader email={email} />
-                <FormSelect email={email} />
+                <MobileHeader user={user} signOut={ClickHandlerSignOut}/>
+                <FormSelect user={user} />
                 <MobileFooter />
             </MobileView>
         </>

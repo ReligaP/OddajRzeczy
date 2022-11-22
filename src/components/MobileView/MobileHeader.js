@@ -1,19 +1,7 @@
 import { Link } from "react-router-dom";
-import { getAuth , signOut } from "firebase/auth";
-import app from "../../firebase/firebaseconfig";
 
-const MobileHeader = (props) => {
 
-    const clickHandlerSignOut = () => {
-        const auth=getAuth(app);
-        signOut(auth).then(() => {
-            console.log("Wylogowany");
-        }).catch((error) => {
-            const errorCode = error.code;
-            const errorMessage = error.message;
-            console.log(errorCode, errorMessage);
-        })
-    };
+const MobileHeader = ( props ) => {
     return (
         <header>
             <div className="mobileHeaderBox">
@@ -38,7 +26,7 @@ const MobileHeader = (props) => {
                                 </Link>
                             </li>
                             {
-                                props.email ?
+                                props.user ?
                                     <>
                                         <li>
                                             <Link to="/oddaj-rzeczy">
@@ -46,7 +34,7 @@ const MobileHeader = (props) => {
                                             </Link>
                                         </li>
                                         <li>
-                                            <Link  onClick={clickHandlerSignOut} to="/">
+                                            <Link  onClick={props.signOut} to="/">
                                                 Wyloguj się
                                             </Link>
                                         </li>

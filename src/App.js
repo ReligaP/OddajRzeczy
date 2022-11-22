@@ -1,7 +1,9 @@
 import { BrowserRouter } from "react-router-dom";
-import { Routes , Route , Navigate } from "react-router";
-import { Suspense , lazy , useState , useEffect } from "react";
+import { Routes , Route } from "react-router";
+import { Suspense , lazy , useEffect } from "react";
 import { getAuth , onAuthStateChanged } from "firebase/auth";
+import { useDispatch } from "react-redux";
+import { saveUser } from "./components/Redux/Slice/AuthSlice";
 import Loading from "./components/Loading";
 import app from "./firebase/firebaseconfig";
 
@@ -12,29 +14,17 @@ const SignOutSuspense = lazy(() => import('./components/SignOut'));
 const FormSuspense = lazy(() => import('./components/Form/Form'));
 
 function App() {
-    const [email,setEmail] = useState("");
+    const auth = getAuth(app);
+    const dispatch = useDispatch();
     useEffect(() => {
-        const auth = getAuth(app);
         onAuthStateChanged(auth, (user) => {
             if (user) {
-                setEmail(user.email);
-            }
-            else {
-                console.log("Użytkownik wylogowany")
-                setEmail("");
+                dispatch(saveUser(user.email));
+            } else {
+                dispatch(saveUser(undefined));
             }
         });
-    }, []);
-    const ProtectedRoute = ({
-                                email,
-                                redirectPath = '/',
-                                children,
-                            }) => {
-        if (email === "") {
-            return <Navigate to={redirectPath} replace />;
-        }
-        return children;
-    };
+    }, [auth, dispatch]);
     return(
         <BrowserRouter>
             <Suspense fallback={<Loading />}>
@@ -42,10 +32,8 @@ function App() {
                     <Route exact path="/" index element={<HomeSuspense />}/>
                     <Route exact path="/logowanie" element={<SignInSuspense />}/>
                     <Route exact path="/rejestracja" element={<RegisterSuspense />}/>
-                    <Route element={<ProtectedRoute email={email}/>}>
-                        <Route exact path="/wylogowano" element={<SignOutSuspense />}/>
-                        <Route exact path="/oddaj-rzeczy" element={<FormSuspense />}/>
-                    </Route>
+                    <Route exact path="/wylogowano" element={<SignOutSuspense />}/>
+                    <Route exact path="/oddaj-rzeczy" element={<FormSuspense />}/>
                 </Routes>
             </Suspense>
         </BrowserRouter>

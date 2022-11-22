@@ -1,21 +1,9 @@
 import { Link as ScrollLink } from "react-scroll";
 import { Link } from "react-router-dom";
-import app from "../firebase/firebaseconfig";
-import { getAuth , signOut } from "firebase/auth";
 import HomeHeroImage from "../assets/Home-Hero-Image.jpg";
 import Decoration from "../assets/Decoration.svg";
 
-const HomeHeader = (props) => {
-    const ClickHandler = () => {
-        const auth=getAuth(app);
-        signOut(auth).then(() => {
-            console.log("Wylogowany");
-        }).catch((error) => {
-            const errorCode = error.code;
-            const errorMessage = error.message;
-            console.log(errorCode, errorMessage);
-        })
-    };
+const HomeHeader = ( props ) => {
     return (
         <header className="homeHeaderBox">
             <div
@@ -26,10 +14,10 @@ const HomeHeader = (props) => {
             <div className="homeHeaderBox_content">
                 <nav className="homeHeaderBox_content__upMenu">
                     {
-                        props.email ?
+                        props.user ?
                             <div className="upMenuTopLogged">
                                 <p className="upMenuTopLogged_email">
-                                    Cześć {props.email} !
+                                    Cześć {props.user} !
                                 </p>
                                 <div className="upMenuTopLogged_box1">
                                     <Link
@@ -41,7 +29,7 @@ const HomeHeader = (props) => {
                                 </div>
                                 <div className="upMenuTopLogged_box2">
                                     <Link
-                                        onClick={ClickHandler}
+                                        onClick={props.signOut}
                                         className="linkButton"
                                         to="/wylogowano"
                                     >
@@ -146,7 +134,7 @@ const HomeHeader = (props) => {
                         <div className="downMenuDown_box">
                             <Link
                                 className="Link"
-                                to={props.email ? '/oddaj-rzeczy' : '/logowanie'}
+                                to={props.user ? '/oddaj-rzeczy' : '/logowanie'}
                             >
                                 <p>
                                     oddaj
