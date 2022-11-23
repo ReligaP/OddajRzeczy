@@ -5,6 +5,7 @@ import { getAuth , onAuthStateChanged } from "firebase/auth";
 import { useDispatch } from "react-redux";
 import { saveUser } from "./components/Redux/Slice/AuthSlice";
 import Loading from "./components/Loading";
+import PrivateRoute from "./components/PrivateRoute";
 import app from "./firebase/firebaseconfig";
 
 const HomeSuspense = lazy(() => import('./components/Home'));
@@ -32,8 +33,15 @@ function App() {
                     <Route exact path="/" index element={<HomeSuspense />}/>
                     <Route exact path="/logowanie" element={<SignInSuspense />}/>
                     <Route exact path="/rejestracja" element={<RegisterSuspense />}/>
-                    <Route exact path="/wylogowano" element={<SignOutSuspense />}/>
-                    <Route exact path="/oddaj-rzeczy" element={<FormSuspense />}/>
+                    <Route exact path="/wylogowano" element={<SignOutSuspense />} />
+                    <Route
+                        exact path="/oddaj-rzeczy"
+                        element={
+                            <PrivateRoute>
+                                <FormSuspense />
+                            </PrivateRoute>
+                        }
+                    />
                 </Routes>
             </Suspense>
         </BrowserRouter>
