@@ -1,16 +1,16 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
-import { BrowserView , MobileView } from "react-device-detect";
 import { getAuth , signInWithEmailAndPassword } from "firebase/auth";
 import { useNavigate } from "react-router";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import * as yup from "yup";
-import app from "../firebase/firebaseconfig";
-import Decoration from "../assets/Decoration.svg";
+import { Link } from "react-router-dom";
+import { BrowserView , MobileView } from "react-device-detect";
 import MobileHeader from "./MobileView/MobileHeader";
 import MobileFooter from "./MobileView/MobileFooter";
 import MobileSignIn from "./MobileView/MobileSignIn";
+import * as yup from "yup";
+import app from "../firebase/firebaseconfig";
+import Decoration from "../assets/Decoration.svg";
 
 const SignInSchema = yup.object().shape({
     email: yup.string()
@@ -30,8 +30,7 @@ const SignIn = () => {
     } = useForm({
         resolver: yupResolver(SignInSchema)
     });
-
-    const submitHandler = (data) => {
+    const submitHandler = ( data ) => {
         const auth = getAuth(app);
         signInWithEmailAndPassword(auth, data.email, data.password)
             .then(() => {

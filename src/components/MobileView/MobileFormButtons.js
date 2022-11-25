@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-const MobileFormButtons = (props) => {
+const MobileFormButtons = ( props ) => {
     return (
         <div className={`mobileFormButtons ${props.page > 1 && 'buttonsBox'} ${props.page === 6 && 'buttonsBoxThanks'}`}>
             {

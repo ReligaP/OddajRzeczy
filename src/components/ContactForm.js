@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
+import { addDoc , collection , getFirestore } from "firebase/firestore";
 import * as yup from "yup";
-import { addDoc, collection, getFirestore } from "firebase/firestore";
 import app from "../firebase/firebaseconfig";
 
 const SignupSchema = yup.object().shape({
@@ -38,7 +38,6 @@ const ContactForm = () => {
             setSuccess(true);
         }
     };
-
     return (
         <section>
             {success ?

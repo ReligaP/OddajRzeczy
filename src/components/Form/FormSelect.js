@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { BrowserView , MobileView } from "react-device-detect";
 import { addDoc , collection , getFirestore } from "firebase/firestore";
+import { BrowserView , MobileView } from "react-device-detect";
 import FormStep1 from "./FormSteps/FormStep1";
 import FormStep2 from "./FormSteps/FormStep2";
 import FormStep3 from "./FormSteps/FormStep3";

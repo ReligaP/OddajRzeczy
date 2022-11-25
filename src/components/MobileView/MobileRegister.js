@@ -1,5 +1,5 @@
 
-const MobileRegister = (props) => {
+const MobileRegister = ( props ) => {
     return (
         <main className="mobileRegisterBox">
             <header className="mobileSignInBox_title">

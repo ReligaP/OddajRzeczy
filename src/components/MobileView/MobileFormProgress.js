@@ -1,6 +1,6 @@
 import DoneIcon from '@mui/icons-material/Done';
 
-const MobileFormProgress = (props) => {
+const MobileFormProgress = ( props ) => {
     return (
         <div className={`mobileFormProgress ${props.page === 6 && `mobileFormProgressDone`}`}>
                 <div className={`mobileFormProgress_box ${props.page === 1 && `checked`} ${props.page > 1 && 'done'}`}>

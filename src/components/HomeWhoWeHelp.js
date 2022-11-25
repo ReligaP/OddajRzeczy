@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import Decoration from "../assets/Decoration.svg";
 import browserPaginationOptions from "../database/browserPaginationOptions";
+import Decoration from "../assets/Decoration.svg";
 
 const HomeWhoWeHelp = () => {
     const [items,setItems] = useState(browserPaginationOptions.fund.items);

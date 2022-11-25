@@ -1,6 +1,6 @@
-import { BrowserView , MobileView } from "react-device-detect";
 import { useSelector } from "react-redux";
 import { getAuth , signOut } from "firebase/auth";
+import { BrowserView , MobileView } from "react-device-detect";
 import FormHeader from "./FormHeader";
 import HomeContact from "../HomeContact";
 import FormSelect from "./FormSelect";
@@ -24,12 +24,12 @@ const Form = () => {
     return (
         <>
             <BrowserView>
-                <FormHeader user={user} signOut={ClickHandlerSignOut}/>
-                <FormSelect user={user}/>
+                <FormHeader user={user} signOut={ClickHandlerSignOut} />
+                <FormSelect user={user} />
                 <HomeContact />
             </BrowserView>
             <MobileView>
-                <MobileHeader user={user} signOut={ClickHandlerSignOut}/>
+                <MobileHeader user={user} signOut={ClickHandlerSignOut} />
                 <FormSelect user={user} />
                 <MobileFooter />
             </MobileView>

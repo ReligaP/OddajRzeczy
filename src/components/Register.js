@@ -1,16 +1,16 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
 import { getAuth , createUserWithEmailAndPassword , signInWithEmailAndPassword } from "firebase/auth";
-import { BrowserView , MobileView } from "react-device-detect";
-import app from "../firebase/firebaseconfig";
 import { useNavigate } from "react-router";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import * as yup from "yup";
-import Decoration from "../assets/Decoration.svg";
+import { BrowserView , MobileView } from "react-device-detect";
+import { Link } from "react-router-dom";
 import MobileHeader from "./MobileView/MobileHeader";
 import MobileFooter from "./MobileView/MobileFooter";
 import MobileRegister from "./MobileView/MobileRegister";
+import app from "../firebase/firebaseconfig";
+import * as yup from "yup";
+import Decoration from "../assets/Decoration.svg";
 
 const RegisterSchema = yup.object().shape({
     email: yup.string()
@@ -32,7 +32,7 @@ const Register = () => {
     } = useForm({
         resolver: yupResolver(RegisterSchema)
     });
-    const submitHandler = (data) => {
+    const submitHandler = ( data ) => {
         const auth = getAuth(app);
         createUserWithEmailAndPassword(auth, data.email, data.password)
             .then(() => {
@@ -174,11 +174,11 @@ const Register = () => {
             <MobileView>
                 <MobileHeader />
                 <MobileRegister
-                    onClick = {handleSubmit(submitHandler)}
-                    registerSchema = {RegisterSchema}
-                    errors = {errors}
-                    invalidEmail = {invalidEmail}
-                    register = {register}
+                    onClick={handleSubmit(submitHandler)}
+                    registerSchema={RegisterSchema}
+                    errors={errors}
+                    invalidEmail={invalidEmail}
+                    register={register}
                 />
                 <MobileFooter />
             </MobileView>

@@ -5,7 +5,7 @@ import { getAuth , onAuthStateChanged } from "firebase/auth";
 import { useDispatch } from "react-redux";
 import { saveUser } from "./components/Redux/Slice/AuthSlice";
 import Loading from "./components/Loading";
-import PrivateRoute from "./components/PrivateRoute";
+import PrivateRoute from "./components/PrivateRoutes/PrivateRoute";
 import app from "./firebase/firebaseconfig";
 
 const HomeSuspense = lazy(() => import('./components/Home'));

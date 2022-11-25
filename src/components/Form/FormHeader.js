@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import BackgroundImage from "../../assets/Form-Hero-Image.jpg";
 import Decoration from "../../assets/Decoration.svg";
 
-const FormHeader = (props) => {
+const FormHeader = ( props ) => {
     return (
         <header className="formBox">
             <div

@@ -1,6 +1,6 @@
 import { BrowserView , MobileView } from "react-device-detect";
-import Decoration from "../../../assets/Decoration.svg";
 import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
+import Decoration from "../../../assets/Decoration.svg";
 
 const FormThanks = () => {
     return (

@@ -1,6 +1,6 @@
-import { BrowserView , MobileView } from 'react-device-detect';
 import { getAuth , signOut } from "firebase/auth";
 import { useSelector } from "react-redux";
+import { BrowserView , MobileView } from 'react-device-detect';
 import HomeHeader from "./HomeHeader";
 import HomeThreeColumns from "./HomeThreeColumns";
 import HomeSimpleSteps from "./HomeSimpleSteps";
@@ -27,7 +27,7 @@ const Home = () => {
     return (
         <>
             <BrowserView>
-                <HomeHeader user={user} signOut={ClickHandlerSignOut}/>
+                <HomeHeader user={user} signOut={ClickHandlerSignOut} />
                 <HomeThreeColumns />
                 <HomeSimpleSteps user={user} />
                 <HomeAbout />
@@ -36,7 +36,7 @@ const Home = () => {
             </BrowserView>
             <MobileView>
                 <MobileHeader user={user} />
-                <MobileHome user={user}/>
+                <MobileHome user={user} />
                 <MobileFooter />
             </MobileView>
         </>
