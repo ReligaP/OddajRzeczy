@@ -7,6 +7,7 @@ import { saveUser } from "./components/Redux/Slice/AuthSlice";
 import Loading from "./components/Loading";
 import PrivateRoute from "./components/PrivateRoutes/PrivateRoute";
 import app from "./firebase/firebaseconfig";
+import {CssBaseline} from "@mui/material";
 
 const HomeSuspense = lazy(() => import('./components/Home'));
 const SignInSuspense = lazy(() => import('./components/SignIn'));
@@ -27,7 +28,8 @@ function App() {
         });
     }, [auth, dispatch]);
     return(
-        <BrowserRouter>
+        <BrowserRouter basename={process.env.PUBLIC_URL}>
+            <CssBaseline />
             <Suspense fallback={<Loading />}>
                 <Routes>
                     <Route exact path="/" index element={<HomeSuspense />}/>
